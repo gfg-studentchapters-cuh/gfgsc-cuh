@@ -1,0 +1,88 @@
+
+
+ .row{
+   min-height: 47vh;
+ }
+ 
+ 
+ 
+ .cards {
+   display: flex;
+   
+ }
+ 
+ .card {
+   z-index: 1;
+   background: #2f8d46;
+   border-radius: 1rem;
+   padding: 2rem;
+   min-width: 20vw;
+   max-width: 25vw;
+   box-shadow: 4px 4px 12px 2px rgba(white, 0.60);
+   transition: 0.2s;
+   box-shadow: 0 10px 20px rgba(190, 182, 182, 0.418), 0 6px 6px rgba(230, 230, 230, 0.418);
+ }
+ 
+  
+   .card a {
+     text-decoration: none;
+     color: white;
+     font-size: 27px;
+   }
+   .card p {
+       color: white;
+       font-size: 16px;
+     }
+ 
+ 
+ .card:not(:first-child) {
+   margin-left: calc(4rem*-1);
+ }
+ 
+ .card:hover,
+ .card:focus-within {
+   transform: translatey(-1rem);
+ }
+ 
+ .card:hover ~ .card,
+ .card:focus-within ~ .card {
+   transform: translatex(4rem);
+ }
+ 
+ .fa-stack {
+   margin-left: -1rem;
+ }
+
+ @media (max-width : 760px ){
+  .cards{
+    display: flex;
+    flex-direction: column;
+  }
+  .card{
+    min-width: 70vw;
+    margin-top: 2vh;
+    margin-left: 10vw;
+
+    box-shadow: 0 10px 20px rgba(160, 137, 137, 0.658), 0 6px 6px rgba(223, 217, 217, 0.555);
+  }
+  
+  .card:not(:first-child) {
+    margin-left: 10vw;
+  }
+  
+  .card:hover,
+  .card:focus-within {
+    transform: translatex(-3rem);
+  }
+  
+  .card:hover ~ .card,
+  .card:focus-within ~ .card {
+    transform: translatey(3rem);
+  }
+  
+  .fa-stack {
+    margin-left: -1rem;
+  }
+  
+ }
+
