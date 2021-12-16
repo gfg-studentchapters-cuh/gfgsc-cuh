@@ -243,16 +243,18 @@ section.margT-10 {
 }
 
 .home .content h3 {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 5rem;
   color: #fff;
 }
 
 .home .content p {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 2rem;
   line-height: 1.8;
-  
+
   color: #eee;
 }
 
@@ -311,26 +313,26 @@ section.margT-10 {
   border-radius: 50%;
 }
 
-.menu .box-container .box h3 {
+.menu .box-container .box .middle h3 {
   color: #fff;
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 1rem 0;
 }
 
-.menu .box-container .box .price {
+.menu .box-container .box .middle .price {
   color: #fff;
   font-size: 2.5rem;
   padding: 0.5rem 0;
 }
 
-.menu .box-container .box .price span {
-  font-size: 1.5rem;
+.menu .box-container .box .middle .price span {
+  /* font-size: 1.5rem;
   text-decoration: line-through;
-  font-weight: lighter;
+  font-weight: lighter; */
 }
 
 .menu .box-container .box:hover {
-  background: #fff;
+  /* background: #fff; */
 }
 
 .menu .box-container .box:hover > * {
@@ -346,7 +348,7 @@ section.margT-10 {
 .products .box-container .box {
   text-align: center;
   border: var(--border);
-  padding: 2rem ;
+  padding: 2rem;
 }
 
 .products .box-container .box .icons a {
@@ -354,7 +356,8 @@ section.margT-10 {
   width: 3.5rem;
   line-height: 5rem;
   font-size: 2rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   border: var(--border);
   color: #fff;
   margin: 0.3rem;
@@ -631,7 +634,10 @@ section.margT-10 {
   #menu-btn {
     display: inline-block;
   }
-  #products, #menu, #about,#contact{
+  #products,
+  #menu,
+  #about,
+  #contact {
     margin-top: 10vh;
   }
 
