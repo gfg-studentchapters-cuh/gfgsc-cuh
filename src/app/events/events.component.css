@@ -2,6 +2,17 @@
   position: relative !important;
 }
 
+.result-1 {
+  width: 400px;
+  font-weight: bold;
+  color: #fe214c !important;
+}
+.result-2 {
+  width: 400px;
+  font-weight: bold;
+  color: #ff9f6c !important;
+}
+
 .image {
   border-radius: 0 !important;
   opacity: 1;

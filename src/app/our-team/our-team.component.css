@@ -1,0 +1,14 @@
+.icons a i {
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.icons a {
+  padding: 10px 0px;
+}
+
+.icons a:hover i {
+  color: #2f8d46;
+}
