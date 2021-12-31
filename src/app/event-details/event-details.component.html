@@ -1,0 +1,244 @@
+<!-- home section starts  -->
+
+<section class="home" id="home">
+  <div class="content">
+    <div class="countdown">
+      <div #day id="day">{{ d }}</div>
+      <div #hour id="hour">{{ h }}</div>
+      <div #minute id="minute">{{ m }}</div>
+      <div #second id="second">{{ s }}</div>
+    </div>
+    <h3>
+      {{ event.eventTitle1 + " " + event.eventType }}
+      <span> {{ event.eventTitle2 }} </span>
+    </h3>
+    <a (click)="goToAbout()" class="btn">know more</a>
+  </div>
+</section>
+
+<!-- home section ends -->
+
+<!-- service section starts  -->
+
+<!-- <section class="service" id="service">
+  <h1 class="heading">our <span>services</span></h1>
+
+  <div class="box-container">
+    <div class="box">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>venue selection</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
+        suscipit.
+      </p>
+    </div>
+
+    <div class="box">
+      <i class="fa fa-envelope"></i>
+      <h3>invitation card</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
+        suscipit.
+      </p>
+    </div>
+
+    <div class="box">
+      <i class="fas fa-music"></i>
+      <h3>entertainment</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
+        suscipit.
+      </p>
+    </div>
+
+    <div class="box">
+      <i class="fas fa-utensils"></i>
+      <h3>food and drinks</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
+        suscipit.
+      </p>
+    </div>
+
+    <div class="box">
+      <i class="fas fa-photo-video"></i>
+      <h3>photos and videos</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
+        suscipit.
+      </p>
+    </div>
+
+    <div class="box">
+      <i class="fas fa-birthday-cake"></i>
+      <h3>custom food</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
+        suscipit.
+      </p>
+    </div>
+  </div>
+</section> -->
+
+<!-- service section ends -->
+
+<!-- about section starts  -->
+
+<section #about class="about" id="about">
+  <h1 class="heading"><span>about</span> event</h1>
+
+  <div class="row">
+    <!-- <div class="image">
+      <img src="assets/images/about-img.jpg" alt="" />
+    </div> -->
+    <div class="content">
+      <h3 *ngIf="event.rulesAndRegulations?.length">rules & regulations</h3>
+      <h3 *ngIf="event.description?.length">event description</h3>
+      <p *ngFor="let rule of event.rulesAndRegulations?.split('. ')">
+        {{ rule }}
+      </p>
+      <p *ngFor="let point of event.description?.split('. ')">
+        {{ point }}
+      </p>
+      <!-- <p>Create a TEAM PAGE for the official GFG Student Chapters CUH</p>
+      <p>
+        Screen Record your whole progress.<br />GitHub link for the project is
+        required. <br />Recording link will be asked on shortlisting.<br />Pre-made
+        Templates will not be considered.
+      </p>
+      <p>Any kind of Plagiarism will result in disqualification.</p> -->
+      <h4 *ngIf="event.eventEnded">event ended, check our winners</h4>
+      <h4 *ngIf="!event.eventEnded">Interested ? Participate now</h4>
+    </div>
+
+    <div class="content">
+      <h3>Prize for Winners</h3>
+      <p *ngFor="let prize of event.prizes?.split('. ')">{{ prize }}</p>
+      <!-- <b>1st Prize</b> - GeeksForGeeks Swag Pack + 1200 INR Discount Coupon +
+        Certificate + Webpage hosted on official Student Chapters Page
+      </p>
+      <p>
+        <b>2nd Prize</b> - 1200 INR Discount Coupon + Certificate + Stickers +
+        Pens
+      </p>
+      <p><b>3rd Prize</b> - 800 INR Discount Coupon + Certificate</p>
+      <p>
+        <b>Note: All the participants will get the participation certificate</b>
+      </p> -->
+      <a *ngIf="event.eventEnded" (click)="goToWinners()" class="btn"
+        >our winners</a
+      >
+      <a *ngIf="!event.eventEnded" href="#" class="btn">click here</a>
+    </div>
+  </div>
+</section>
+
+<!-- about section ends -->
+
+<!-- gallery section starts  -->
+
+<section *ngIf="event.eventGallery.length" class="gallery" id="gallery">
+  <h1 class="heading">event <span>gallery</span></h1>
+
+  <div class="box-container">
+    <div *ngFor="let gallery of event.eventGallery; let i = index" class="box">
+      <img src="{{ gallery }}" alt="" />
+      <h3 class="title">photos and events</h3>
+      <div class="icons">
+        <a href="#">
+          <fa-icon [icon]="['fas', 'heart']"></fa-icon>
+        </a>
+        <a href="#">
+          <fa-icon [icon]="['fas', 'share']"></fa-icon>
+        </a>
+        <a href="#">
+          <fa-icon [icon]="['fas', 'eye']"></fa-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- gallery section ends -->
+
+<!-- price section starts  -->
+
+<section #winners class="price" id="price">
+  <h1 class="heading">our <span>winners</span></h1>
+
+  <div class="box-container">
+    <div class="box" *ngFor="let winner of event.winners">
+      <h3 class="title">{{ winner.position }} position</h3>
+      <h3 class="amount">{{ winner.name }}</h3>
+      <p class="college">{{ winner.collegeName }}</p>
+      <ul>
+        <li *ngFor="let prize of winner.prizesWon">
+          <fa-icon [icon]="['fas', 'check']"></fa-icon> {{ prize }}
+        </li>
+        <!-- <li>
+          <fa-icon [icon]="['fas', 'check']"></fa-icon> 1200 INR Discount Coupon
+        </li>
+        <li><fa-icon [icon]="['fas', 'check']"></fa-icon> Certificate</li>
+        <li><fa-icon [icon]="['fas', 'check']"></fa-icon> page live</li> -->
+      </ul>
+      <!-- <a href="https://byte2code.github.io/Semantic/" class="btn">see work</a> -->
+    </div>
+
+    <!-- <div class="box">
+      <h3 class="title">second position</h3>
+      <h3 class="amount">Mausam Kumar Giri</h3>
+      <ul>
+        <li>
+          <fa-icon [icon]="['fas', 'check']"></fa-icon> 1200 INR Discount Coupon
+        </li>
+        <li><fa-icon [icon]="['fas', 'check']"></fa-icon> Certificate</li>
+        <li><fa-icon [icon]="['fas', 'check']"></fa-icon> Stickers</li>
+        <li><fa-icon [icon]="['fas', 'check']"></fa-icon> Pens</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h3 class="title">third position</h3>
+      <h3 class="amount">Mausam Kumar Giri</h3>
+      <ul>
+        <li>
+          <fa-icon [icon]="['fas', 'check']"></fa-icon> 800 INR Discount Coupon
+        </li>
+        <li><fa-icon [icon]="['fas', 'check']"></fa-icon> Certificate</li>
+      </ul>
+    </div> -->
+  </div>
+</section>
+
+<!-- price section ends -->
+
+<!-- review section starts  -->
+
+<!-- review section ends -->
+
+<!-- contact section starts  -->
+
+<!-- <section class="contact" id="contact">
+  <h1 class="heading"><span>contact</span> us</h1>
+
+  <form action="">
+    <div class="inputBox">
+      <input type="text" placeholder="name" />
+      <input type="email" placeholder="email" />
+    </div>
+    <div class="inputBox">
+      <input type="number" placeholder="number" />
+      <input type="text" placeholder="subject" />
+    </div>
+    <textarea
+      name=""
+      placeholder="your message"
+      id=""
+      cols="30"
+      rows="10"
+    ></textarea>
+    <input type="submit" value="send message" class="btn" />
+  </form>
+</section> -->
+
+<!-- contact section ends -->

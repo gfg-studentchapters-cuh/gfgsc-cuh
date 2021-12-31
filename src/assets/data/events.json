@@ -1,0 +1,130 @@
+[
+  {
+    "eventTitle1": "Technical",
+    "eventTitle2": "Programming And Insights",
+    "eventType": "Seminar",
+    "eventId": 1,
+    "eventDate": "11 Dec, 2021 11:00:00",
+    "rulesAndRegulations": "",
+    "description": "The Event is mainly focused on 1st and 2nd year students Covering. Competitive Programming & Data Structures and Algorithm. Basic of Daily Trends, Web development & App development. Internship and Career Opportunities, Git & GitHub & much more",
+    "prizes": " The student with the best engagement throughout the session will get a chance to win. T-shirts. Pen and stickers. coupon vouchers ",
+    "eventEnded": true,
+    "eventImage": "assets/images/event-1.jpg",
+    "eventGallery": [
+      "assets/images/1-1.png",
+      "assets/images/1-2.png",
+      "assets/images/1-3.png"
+    ],
+    "winners": [
+      {
+        "position": "First",
+        "name": "Sanand Tripathi",
+        "collegeName": "Central University of Haryana",
+        "prizesWon": ["800 INR Discount Coupon"]
+      }
+    ],
+    "speaker": {
+      "name": "Shubham Jaiswal",
+      "designation": "Software Engineer",
+      "organization": "Tata Consultancy Services"
+    }
+  },
+  {
+    "eventTitle1": "Website Designing!",
+    "eventTitle2": "Semantica",
+    "eventType": "Competition",
+
+    "eventId": 2,
+    "eventDate": "19 Dec, 2021 10:30:00",
+    "rulesAndRegulations": "Create a TEAM PAGE for the official GFG Student Chapters CUH. GitHub link for the project is required- Pre-made Templates will not be considered. Screen Record your whole progress- will be asked on shortlisting. Any kind of Plagiarism will result in disqualification.",
+    "description": "",
+    "prizes": " 1st Prize - GeeksForGeeks Swag Pack + 1200 INR Discount Coupon + Certificate + Webpage hosted on official Student Chapters Page. 2nd Prize - 1200 INR Discount Coupon + Certificate + Stickers +  Pens. 3rd Prize - 800 INR Discount Coupon + Crtificate. Note: All the participants will get the participation certificate ",
+    "eventEnded": true,
+    "eventImage": "assets/images/event-2-past.jpg",
+    "eventGallery": [],
+    "winners": [
+      {
+        "position": "First",
+        "name": "Mihir Mukund",
+        "collegeName": "Central University of Haryana",
+        "prizesWon": [
+          "GeeksForGeeks Swag Pack",
+          "1200 INR Discount Coupon",
+          "Certificate",
+          "Page Live"
+        ]
+      },
+      {
+        "position": "Second",
+        "name": "Mausam Giri",
+        "collegeName": "Central University of Haryana",
+        "prizesWon": [
+          "1200 INR Discount Coupon",
+          "Certificate",
+          "Stickers",
+          "Pens"
+        ]
+      },
+      {
+        "position": "Third",
+        "name": "Kushal Sharma",
+        "collegeName": "Sanskriti College Computer Education",
+        "prizesWon": ["800 INR Discount Coupon", "Certificate"]
+      }
+    ],
+    "speaker": {
+      "name": "Shubham Jaiswal",
+      "designation": "Software Engineer",
+      "organization": "Tata Consultancy Services"
+    }
+  },
+  {
+    "eventTitle1": "UI/UX Designing!",
+    "eventTitle2": "Persona",
+    "eventType": "Seminar",
+
+    "eventId": 3,
+    "eventDate": "19 Dec, 2021 16:00:00",
+    "rulesAndRegulations": "Design your Personal Portfolio. GitHub link for the project is required- Pre-made Templates will not be considered. Screen Record your whole progress- will be asked on shortlisting. Any kind of Plagiarism will result in disqualification.",
+    "description": "",
+    "prizes": " 1st Prize - GeeksForGeeks Swag Pack + 1200 INR Discount Coupon + Certificate. 2nd Prize - 1200 INR Discount Coupon + Certificate + Stickers +  Pens. 3rd Prize - 800 INR Discount Coupon + Crtificate. Note: All the participants will get the participation certificate ",
+    "eventEnded": true,
+    "eventImage": "assets/images/event-3-past.jpg",
+    "eventGallery": [],
+    "winners": [
+      {
+        "position": "First",
+        "name": "Mausam Giri",
+        "collegeName": "Central University of Haryana",
+        "prizesWon": [
+          "GeeksForGeeks Swag Pack",
+          "1200 INR Discount Coupon",
+          "Certificate",
+          "Page Live"
+        ]
+      },
+      {
+        "position": "Second",
+        "name": "Dhruv Bhattacharya",
+        "collegeName": "Gyan Ganga Institute of Technology",
+        "prizesWon": [
+          "1200 INR Discount Coupon",
+          "Certificate",
+          "Stickers",
+          "Pens"
+        ]
+      },
+      {
+        "position": "Third",
+        "name": "Nihal Dwivedi",
+        "collegeName": "National Institute of Technology",
+        "prizesWon": ["800 INR Discount Coupon", "Certificate"]
+      }
+    ],
+    "speaker": {
+      "name": "Shubham Jaiswal",
+      "designation": "Software Engineer",
+      "organization": "Tata Consultancy Services"
+    }
+  }
+]

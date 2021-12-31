@@ -1,0 +1,14 @@
+.mailImage img {
+  margin-top: 5%;
+  width: 60%;
+  height: 80%;
+}
+.mailImage {
+  text-align: center;
+}
+
+@media (max-width: 450px) {
+  .contact .row form {
+    padding: 2rem 3rem !important;
+  }
+}

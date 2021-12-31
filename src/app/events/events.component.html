@@ -2,124 +2,52 @@
   <h1 class="heading">upcoming <span>events</span></h1>
 
   <div class="box-container">
-    <div class="box events event-2">
-      <img src="assets/images/event-2.jpg" class="image" alt="" />
+    <div *ngIf="!futureEvents.length" class="box events">
+      <img src="assets/images/event-plan.jpg" class="image" alt="" />
       <div class="middle">
-        <h3>semantica</h3>
-        <div class="price">Website Designing</div>
-        <h3 class="event-type">Competition</h3>
-        <h3 class="result-1">Results on Christmas Eve</h3>
-        <!-- <a href="https://forms.gle/ooDxa3LBHToa2AEm6" class="btn"
-          >Register Now</a
-        > -->
+        <h3>Hello Geeks!</h3>
+        <h3 class="event-type">We are planning something very special</h3>
+        <div class="price">till then have a look at some past events</div>
+        <a (click)="goToPastEvents()" class="btn">Past Events</a>
       </div>
     </div>
-    <div class="box events event-3">
-      <img src="assets/images/event-3.jpg" class="image" alt="" />
+    <div *ngFor="let event of futureEvents" class="box events event-2">
+      <img src="{{ event.eventImage }}" class="image" alt="" />
       <div class="middle">
-        <h3>persona</h3>
-        <div class="price">UI/UX Designing</div>
-        <h3 class="event-type">Competition</h3>
-        <h3 class="result-2">Results on Christmas Eve</h3>
-        <!-- <a href="https://forms.gle/ooDxa3LBHToa2AEm6" class="btn"
-          >Register Now</a
-        > -->
+        <h3>{{ event.eventTitle2 }}</h3>
+        <div class="price">{{ event.eventTitle1 }}</div>
+        <h3 class="event-type">{{ event.eventType }}</h3>
+        <!-- <h3 class="result-1">Results on New Year</h3> -->
+        <a routerLink="/event/{{ event.eventId }}" class="btn">View Details</a>
       </div>
     </div>
-
-    <!-- <div class="box">
-      <img src="assets/images/menu-2.png" alt="" />
-      <h3>name of the event</h3>
-      <div class="price">Mr. Abc</div>
-      <a href="#" class="btn">Register Now</a>
-    </div> -->
-
-    <!-- <div class="box">
-      <img src="assets/images/menu-3.png" alt="" />
-      <h3>tasty and healty</h3>
-      <div class="price">$15.99 <span>20.99</span></div>
-      <a href="#" class="btn">add to cart</a>
-    </div>
-
-    <div class="box">
-      <img src="assets/images/menu-4.png" alt="" />
-      <h3>tasty and healty</h3>
-      <div class="price">$15.99 <span>20.99</span></div>
-      <a href="#" class="btn">add to cart</a>
-    </div>
-
-    <div class="box">
-      <img src="assets/images/menu-5.png" alt="" />
-      <h3>tasty and healty</h3>
-      <div class="price">$15.99 <span>20.99</span></div>
-      <a href="#" class="btn">add to cart</a>
-    </div>
-
-    <div class="box">
-      <img src="assets/images/menu-6.png" alt="" />
-      <h3>tasty and healty</h3>
-      <div class="price">$15.99 <span>20.99</span></div>
-      <a href="#" class="btn">add to cart</a>
-    </div> -->
   </div>
   <br />
   <hr />
   <br />
-  <h1 class="heading">past <span>events</span></h1>
+  <h1 #past class="heading">past <span>events</span></h1>
   <div class="box-container">
-    <!-- <div class="box">
-      <h3>no past events yet!</h3>
-      <div class="price">register for some NOW!</div>
-      <a href="#" class="btn">Watch Now</a>
-    </div> -->
-
-    <div class="box events event-2">
-      <img src="assets/images/event-1.jpg" class="image past-event" alt="" />
-      <div class="middle">
-        <h3 class="event-type">seminar</h3>
-        <h3>programming and insights</h3>
-        <div class="price">
-          <span class="speaker">Speaker : </span>Mr. Shubham jaiswal
-        </div>
-        <!-- <a href="https://forms.gle/PBkGKd5mMjtJS8sWA" class="btn"
-          >Register Now</a
-        > -->
-      </div>
-    </div>
-
-    <!-- <div class="box">
-      <img src="assets/images/menu-2.png" alt="" />
-      <h3>Name of the event</h3>
-      <div class="price">Mr. Abc</div>
-      <a href="#" class="btn">Watch Now</a>
-    </div> -->
-
-    <!-- <div class="box">
-      <img src="assets/images/menu-3.png" alt="" />
-      <h3>tasty and healty</h3>
-      <div class="price">$15.99 <span>20.99</span></div>
-      <a href="#" class="btn">add to cart</a>
-    </div>
-
-    <div class="box">
-      <img src="assets/images/menu-4.png" alt="" />
-      <h3>tasty and healty</h3>
-      <div class="price">$15.99 <span>20.99</span></div>
-      <a href="#" class="btn">add to cart</a>
-    </div>
-
-    <div class="box">
-      <img src="assets/images/menu-5.png" alt="" />
-      <h3>tasty and healty</h3>
-      <div class="price">$15.99 <span>20.99</span></div>
-      <a href="#" class="btn">add to cart</a>
-    </div>
-
-    <div class="box">
-      <img src="assets/images/menu-6.png" alt="" />
-      <h3>tasty and healty</h3>
-      <div class="price">$15.99 <span>20.99</span></div>
-      <a href="#" class="btn">add to cart</a>
-    </div> -->
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let event of pastEvents"
+        ><div class="box events pastEvent event-1">
+          <img src="{{ event?.eventImage }}" class="image past-event" alt="" />
+          <div class="middle">
+            <h3 class="event-type">
+              {{ event.eventTitle1 + " " + event.eventType }}
+            </h3>
+            <h3>{{ event.eventTitle2 }}</h3>
+            <a routerLink="/event/{{ event.eventId }}" class="btn"
+              >View Details</a
+            >
+            <!-- <div class="price">
+              <span class="speaker">Speaker : </span>{{ event.eventSpeaker }}
+            </div> -->
+            <!-- <a href="https://forms.gle/PBkGKd5mMjtJS8sWA" class="btn"
+              >Register Now</a
+            > -->
+          </div>
+        </div></ng-template
+      >
+    </owl-carousel-o>
   </div>
 </section>

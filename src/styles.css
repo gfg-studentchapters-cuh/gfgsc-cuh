@@ -687,3 +687,57 @@ section.margT-10 {
     font-size: 50%;
   }
 }
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* owl carousel events start*/
+.box-container .owl-prev,
+.box-container .owl-next {
+  color: #fff;
+  font-size: 14px;
+  margin: 5 px;
+  padding: 7px 7px !important;
+  background: var(--main-color) !important;
+  display: inline-block;
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  border-radius: 50% !important;
+  position: absolute;
+  top: 50%;
+}
+.box-container .owl-prev {
+  left: 0;
+}
+.box-container .owl-next {
+  right: 0;
+}
+
+.box-container .owl-prev i,
+.box-container .owl-next i {
+  font-size: 20px;
+}
+.box-container .owl-next:hover i,
+.box-container .owl-prev:hover i {
+  color: var(--main-color);
+  font-size: 20px !important;
+}
+.box-container .owl-next:hover,
+.box-container .owl-prev:hover {
+  background: #fff !important;
+}
+
+@media (max-width: 450px) {
+  .box-container .owl-prev,
+  .box-container .owl-next {
+    display: none !important;
+  }
+}
+/* owl carousel events end*/
