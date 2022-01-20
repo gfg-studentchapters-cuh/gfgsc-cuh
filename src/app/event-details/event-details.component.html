@@ -112,23 +112,41 @@
     </div>
 
     <div class="content">
-      <h3>Prize for Winners</h3>
+      <h3 *ngIf="event.prizes?.length">Prize for Winners</h3>
       <p *ngFor="let prize of event.prizes?.split('. ')">{{ prize }}</p>
-      <!-- <b>1st Prize</b> - GeeksForGeeks Swag Pack + 1200 INR Discount Coupon +
-        Certificate + Webpage hosted on official Student Chapters Page
-      </p>
-      <p>
-        <b>2nd Prize</b> - 1200 INR Discount Coupon + Certificate + Stickers +
-        Pens
-      </p>
-      <p><b>3rd Prize</b> - 800 INR Discount Coupon + Certificate</p>
-      <p>
-        <b>Note: All the participants will get the participation certificate</b>
-      </p> -->
+      <h3 *ngIf="!event.prizes?.length">Invited Speaker</h3>
+      <div class="speaker-area" *ngFor="let speaker of event.speaker">
+        <div *ngIf="!event.prizes?.length" class="speaker-profile">
+          <div class="left-part">
+            <img
+              class="speakerImg"
+              src="assets/images/speaker-{{ event.eventId }}.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="right-part">
+            <p class="speakerName">{{ speaker.name }}</p>
+            <p class="speakerDesig">
+              {{ speaker.designation }} @
+              <span id="speakerDesig">{{ speaker.organization }}</span>
+            </p>
+            <p class="speakerEdu">{{ speaker.education }}</p>
+          </div>
+        </div>
+        <div *ngIf="!event.prizes?.length" class="speaker-description">
+          {{ speaker?.description }}
+        </div>
+      </div>
       <a *ngIf="event.eventEnded" (click)="goToWinners()" class="btn"
         >our winners</a
       >
-      <a *ngIf="!event.eventEnded" href="#" class="btn">click here</a>
+      <a
+        *ngIf="!event.eventEnded"
+        href="{{ event.eventRegistrationLink }}"
+        class="btn"
+        target="_blank"
+        >register now</a
+      >
     </div>
   </div>
 </section>
@@ -163,7 +181,7 @@
 
 <!-- price section starts  -->
 
-<section #winners class="price" id="price">
+<section *ngIf="event.winners?.length" #winners class="price" id="price">
   <h1 class="heading">our <span>winners</span></h1>
 
   <div class="box-container">

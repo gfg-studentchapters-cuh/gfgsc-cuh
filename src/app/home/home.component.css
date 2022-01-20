@@ -106,3 +106,14 @@
     border-radius: 50%;
   }
 }
+
+.content p {
+  font-size: 3rem;
+}
+.content .mid-size {
+  font-size: 5rem;
+  font-weight: bold;
+}
+.content .mid-size.main-color {
+  color: #2f8d46;
+}

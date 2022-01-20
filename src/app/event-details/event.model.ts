@@ -10,8 +10,9 @@ export interface Event {
   eventEnded: boolean;
   eventImage?: string;
   eventGallery: string[];
+  eventRegistrationLink?: string;
   winners?: any[];
-  speaker?: {};
+  speaker?: any[];
 }
 
 export interface Winners {

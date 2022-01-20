@@ -15,6 +15,8 @@
       "assets/images/1-2.png",
       "assets/images/1-3.png"
     ],
+    "eventRegistrationLink": "",
+
     "winners": [
       {
         "position": "First",
@@ -23,11 +25,14 @@
         "prizesWon": ["800 INR Discount Coupon"]
       }
     ],
-    "speaker": {
-      "name": "Shubham Jaiswal",
-      "designation": "Software Engineer",
-      "organization": "Tata Consultancy Services"
-    }
+    "speaker": [
+      {
+        "name": "Shubham Jaiswal",
+        "designation": "Software Engineer",
+        "organization": "Tata Consultancy Services",
+        "education": ""
+      }
+    ]
   },
   {
     "eventTitle1": "Website Designing!",
@@ -42,6 +47,8 @@
     "eventEnded": true,
     "eventImage": "assets/images/event-2-past.jpg",
     "eventGallery": [],
+    "eventRegistrationLink": "",
+
     "winners": [
       {
         "position": "First",
@@ -72,11 +79,7 @@
         "prizesWon": ["800 INR Discount Coupon", "Certificate"]
       }
     ],
-    "speaker": {
-      "name": "Shubham Jaiswal",
-      "designation": "Software Engineer",
-      "organization": "Tata Consultancy Services"
-    }
+    "speaker": []
   },
   {
     "eventTitle1": "UI/UX Designing!",
@@ -87,10 +90,12 @@
     "eventDate": "19 Dec, 2021 16:00:00",
     "rulesAndRegulations": "Design your Personal Portfolio. GitHub link for the project is required- Pre-made Templates will not be considered. Screen Record your whole progress- will be asked on shortlisting. Any kind of Plagiarism will result in disqualification.",
     "description": "",
-    "prizes": " 1st Prize - GeeksForGeeks Swag Pack + 1200 INR Discount Coupon + Certificate. 2nd Prize - 1200 INR Discount Coupon + Certificate + Stickers +  Pens. 3rd Prize - 800 INR Discount Coupon + Crtificate. Note: All the participants will get the participation certificate ",
+    "prizes": " 1st Prize - GeeksForGeeks Swag Pack + 1200 INR Discount Coupon + Certificate. 2nd Prize - 1200 INR Discount Coupon + Certificate + Stickers +  Pens. 3rd Prize - 800 INR Discount Coupon + Certificate. Note: All the participants will get the participation certificate ",
     "eventEnded": true,
     "eventImage": "assets/images/event-3-past.jpg",
     "eventGallery": [],
+    "eventRegistrationLink": "",
+
     "winners": [
       {
         "position": "First",
@@ -121,10 +126,31 @@
         "prizesWon": ["800 INR Discount Coupon", "Certificate"]
       }
     ],
-    "speaker": {
-      "name": "Shubham Jaiswal",
-      "designation": "Software Engineer",
-      "organization": "Tata Consultancy Services"
-    }
+    "speaker": []
+  },
+  {
+    "eventTitle1": "",
+    "eventTitle2": "Resume Building",
+    "eventType": "Workshop",
+
+    "eventId": 4,
+    "eventDate": "29 Jan, 2022 12:00:00",
+    "rulesAndRegulations": "",
+    "description": "GeeksForGeeks Student Chapter's -  Central University of Haryana Presents RESUME BUILDING WORKSHOP on 29 January, 2022 starting from 12 Noon. It is the time for Campus Drives and Applying for Internships, for that, you definitely need a professional, attractive and eye-catching resume. Learn to built resume with our GeeksForGeeks Mentor, Ms Kirti Gera, Graduated from NIT, Jamshedpur, Jharkhand",
+    "prizes": "",
+    "eventEnded": false,
+    "eventImage": "assets/images/event-4.jpeg",
+    "eventGallery": [],
+    "eventRegistrationLink": "https://forms.gle/dKCzVG5qxEwAvvpY9",
+    "winners": [],
+    "speaker": [
+      {
+        "name": "Ms. Kirti Gera",
+        "designation": "Mentor",
+        "organization": "GeeksForGeeks",
+        "education": "NIT, Jamshedpur",
+        "description": "She is graduated from National Institute of Technology, Jamshedpur. She's been mentoring a lot of students through live sessions and workshops as a part of GeeksForGeeks."
+      }
+    ]
   }
 ]

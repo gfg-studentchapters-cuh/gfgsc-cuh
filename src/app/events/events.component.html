@@ -11,7 +11,7 @@
         <a (click)="goToPastEvents()" class="btn">Past Events</a>
       </div>
     </div>
-    <div *ngFor="let event of futureEvents" class="box events event-2">
+    <div *ngFor="let event of futureEvents" class="box events future-event">
       <img src="{{ event.eventImage }}" class="image" alt="" />
       <div class="middle">
         <h3>{{ event.eventTitle2 }}</h3>

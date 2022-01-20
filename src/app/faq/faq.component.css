@@ -1,88 +1,280 @@
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
 
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  justify-content: space-around;
+}
 
- .row{
-   min-height: 47vh;
- }
- 
- 
- 
- .cards {
-   display: flex;
-   
- }
- 
- .card {
-   z-index: 1;
-   background: #2f8d46;
-   border-radius: 1rem;
-   padding: 2rem;
-   min-width: 20vw;
-   max-width: 25vw;
-   box-shadow: 4px 4px 12px 2px rgba(white, 0.60);
-   transition: 0.2s;
-   box-shadow: 0 10px 20px rgba(190, 182, 182, 0.418), 0 6px 6px rgba(230, 230, 230, 0.418);
- }
- 
-  
-   .card a {
-     text-decoration: none;
-     color: white;
-     font-size: 27px;
-   }
-   .card p {
-       color: white;
-       font-size: 16px;
-     }
- 
- 
- .card:not(:first-child) {
-   margin-left: calc(4rem*-1);
- }
- 
- .card:hover,
- .card:focus-within {
-   transform: translatey(-1rem);
- }
- 
- .card:hover ~ .card,
- .card:focus-within ~ .card {
-   transform: translatex(4rem);
- }
- 
- .fa-stack {
-   margin-left: -1rem;
- }
+.faq-wrapper {
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  width: 100%;
+  height: 460px;
+  border-radius: 20px;
+  align-self: center;
+  border: 0px;
+  animation: opac 1.5s;
+}
 
- @media (max-width : 760px ){
-  .cards{
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.left {
+  width: 40%;
+  background: url("../../assets/images/bg-pattern-desktop.svg") no-repeat;
+  background-position: top;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background-position: -520px 68%;
+  background-size: 900px;
+}
+
+.illustration {
+  margin: auto;
+  margin-left: -70px;
+}
+
+.box {
+  position: absolute;
+  margin-top: 200px;
+  margin-left: -218px;
+  transition: 1s;
+}
+
+.faq-wrapper:hover .box {
+  transition: 2s;
+  margin-left: -250px;
+}
+
+.right {
+  width: 60%;
+}
+
+.content-wrapper {
+  padding-right: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.faqContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.faqs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90%;
+  margin-left: 0px;
+  padding: 15px 5px 10px 0px;
+  overflow: hidden;
+  border-bottom: 1px solid rgb(202, 201, 201);
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  border-radius: 100%;
+  border: #bbb;
+  transition: 1s;
+  color: black;
+}
+
+.questions {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.6em;
+  color: black;
+}
+
+.visited {
+  color: black;
+}
+
+.accordion .button {
+  width: 10px;
+  height: 7px;
+  padding-left: 0px;
+}
+
+.answers {
+  line-height: 1.3;
+  font-size: 1.4em;
+  max-height: 0px;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-right: 10px;
+  color: black;
+  transition: max-height 0.5s ease-out;
+}
+
+.active {
+  font-weight: 700;
+  color: #2f8d46;
+}
+
+#faqs div a {
+  text-decoration: none;
+}
+
+#faqs div img {
+  height: 7px;
+}
+
+.faqs .questions:hover {
+  color: #2f8d46;
+  cursor: pointer;
+}
+
+.panel {
+  color: black;
+  padding-top: 15px;
+  overflow: hidden;
+  transition: max-height 1s ease out;
+}
+
+@media only screen and (max-width: 720px) {
+  body {
+    height: auto;
+  }
+
+  .faq-wrapper {
     display: flex;
     flex-direction: column;
+    width: 85%;
+    height: auto;
+    margin: auto;
+    align-self: center;
+    margin-top: 240px;
+    margin-bottom: 60px;
   }
-  .card{
-    min-width: 70vw;
-    margin-top: 2vh;
-    margin-left: 10vw;
 
-    box-shadow: 0 10px 20px rgba(160, 137, 137, 0.658), 0 6px 6px rgba(223, 217, 217, 0.555);
+  .faqs {
+    width: auto;
+    padding-right: 0px;
   }
-  
-  .card:not(:first-child) {
-    margin-left: 10vw;
-  }
-  
-  .card:hover,
-  .card:focus-within {
-    transform: translatex(-3rem);
-  }
-  
-  .card:hover ~ .card,
-  .card:focus-within ~ .card {
-    transform: translatey(3rem);
-  }
-  
-  .fa-stack {
-    margin-left: -1rem;
-  }
-  
- }
 
+  .left {
+    width: 100%;
+    height: 180px;
+    overflow: visible;
+    background-position: 50% 100%;
+    background-size: 75%;
+  }
+
+  .illustration {
+    width: 75%;
+    margin: -35%;
+  }
+
+  .box {
+    position: relative;
+    width: 30%;
+    margin: 0 0px 0px -48%;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .content-wrapper {
+    width: auto;
+  }
+
+  .content-wrapper h1 {
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    height: auto;
+  }
+
+  .faq-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    align-self: center;
+    margin-top: 160px;
+    margin-bottom: 60px;
+  }
+
+  .faqs {
+    width: auto;
+    padding-right: 0px;
+  }
+
+  .left {
+    width: 100%;
+    height: 80px;
+    overflow: visible;
+    background-position: 50% 110%;
+    background-size: 75%;
+  }
+
+  .illustration {
+    width: 75%;
+    margin: -35%;
+  }
+
+  .box {
+    position: relative;
+    width: 30%;
+    margin: 0 0px 0px -48%;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .content-wrapper {
+    width: auto;
+    margin: 0 20px;
+    padding-right: 0;
+  }
+
+  .content-wrapper h1 {
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .left {
+    height: 100px;
+    background-position: 50% 100%;
+  }
+
+  .faq-wrapper {
+    margin-bottom: 100px;
+  }
+
+  .questions {
+    font-size: 1.1em;
+  }
+}
