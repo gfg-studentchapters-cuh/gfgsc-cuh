@@ -84,7 +84,7 @@
   {
     "eventTitle1": "UI/UX Designing!",
     "eventTitle2": "Persona",
-    "eventType": "Seminar",
+    "eventType": "Competition",
 
     "eventId": 3,
     "eventDate": "19 Dec, 2021 16:00:00",
@@ -129,7 +129,7 @@
     "speaker": []
   },
   {
-    "eventTitle1": "",
+    "eventTitle1": "Virtual",
     "eventTitle2": "Resume Building",
     "eventType": "Workshop",
 
@@ -138,7 +138,7 @@
     "rulesAndRegulations": "",
     "description": "GeeksForGeeks Student Chapter's -  Central University of Haryana Presents RESUME BUILDING WORKSHOP on 29 January, 2022 starting from 12 Noon. It is the time for Campus Drives and Applying for Internships, for that, you definitely need a professional, attractive and eye-catching resume. Learn to built resume with our GeeksForGeeks Mentor, Ms Kirti Gera, Graduated from NIT, Jamshedpur, Jharkhand",
     "prizes": "",
-    "eventEnded": false,
+    "eventEnded": true,
     "eventImage": "assets/images/event-4.jpeg",
     "eventGallery": [],
     "eventRegistrationLink": "https://forms.gle/dKCzVG5qxEwAvvpY9",

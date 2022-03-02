@@ -34,6 +34,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { FaqComponent } from './faq/faq.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { FaqTypeDirective } from './directives/faq-type.directive';
+import { LoaderComponent } from './loader/loader.component';
+import { EventGalleryComponent } from './event-gallery/event-gallery.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { FaqTypeDirective } from './directives/faq-type.directive';
     FaqComponent,
     EventDetailsComponent,
     FaqTypeDirective,
+    LoaderComponent,
+    EventGalleryComponent,
   ],
   imports: [
     BrowserModule,

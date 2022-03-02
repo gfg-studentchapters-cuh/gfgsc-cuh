@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,34 +13,42 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
-  constructor(private router: Router) {}
-  navbar: HTMLElement | null = null;
+export class HeaderComponent implements OnInit, AfterViewInit {
+  constructor(private router: Router, private renderer: Renderer2) {}
+  @ViewChild('navbar') navbar: ElementRef<HTMLElement> = {} as ElementRef;
   searchForm: HTMLElement | null = null;
   cartItem: HTMLElement | null = null;
 
   ngOnInit(): void {
-    this.navbar = document.querySelector('.navbar');
     this.searchForm = document.querySelector('.search-form');
     this.cartItem = document.querySelector('.cart-items-container');
   }
 
+  ngAfterViewInit(): void {
+    this.navbar.nativeElement.querySelectorAll('a').forEach((menuLink) => {
+      menuLink.addEventListener('click', () => {
+        this.renderer.removeClass(this.navbar.nativeElement, 'active');
+      });
+    });
+  }
+
   onClickMenuButton() {
-    this.navbar?.classList.toggle('active');
+    this.navbar.nativeElement.classList.toggle('active');
     this.searchForm?.classList.remove('active');
     this.cartItem?.classList.remove('active');
+    console.log(this.navbar.nativeElement.querySelectorAll('a'));
   }
 
   onClickCartButton() {
     console.log(this.cartItem, this.navbar, this.searchForm);
     this.cartItem?.classList.toggle('active');
-    this.navbar?.classList.remove('active');
+    this.navbar.nativeElement.classList.remove('active');
     this.searchForm?.classList.remove('active');
   }
 
   onClickSearchButton() {
     this.searchForm?.classList.toggle('active');
-    this.navbar?.classList.remove('active');
+    this.navbar.nativeElement.classList.remove('active');
     this.cartItem?.classList.remove('active');
   }
 

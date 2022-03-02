@@ -9,6 +9,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HelperService } from '../core/helper.service';
 
 @Component({
   selector: 'app-event-details',
@@ -16,7 +17,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./event-details.component.css'],
 })
 export class EventDetailsComponent implements OnInit, AfterViewInit {
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private helperService: HelperService
+  ) {}
   @ViewChild('about') aboutDiv: ElementRef | undefined;
   @ViewChild('winners') winnersDiv: ElementRef | undefined;
   @ViewChild('day') dayEL: ElementRef;
@@ -46,6 +51,11 @@ export class EventDetailsComponent implements OnInit, AfterViewInit {
       console.log(this.event);
       this.callCounter(this.countDate);
     });
+
+    this.helperService.showLoader();
+    setTimeout(() => {
+      this.helperService.hideLoader();
+    }, 1000);
   }
 
   callCounter(countDate: any) {

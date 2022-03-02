@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HelperService } from '../core/helper.service';
 
 @Component({
   selector: 'app-our-team',
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./our-team.component.css'],
 })
 export class OurTeamComponent implements OnInit {
-  constructor() {}
+  constructor(private helperService: HelperService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.helperService.showLoader();
+    setTimeout(() => {
+      this.helperService.hideLoader();
+    }, 1000);
+  }
 
   // serviceBlock = [
   //   {

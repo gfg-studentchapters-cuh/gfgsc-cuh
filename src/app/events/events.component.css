@@ -37,6 +37,12 @@
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  .middle {
+    width: 75% !important;
+  }
+}
+
 .menu .past-events {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(90rem, 1fr)) !important;
@@ -51,7 +57,7 @@
   transform: scale(1) !important;
 }
 .menu .box-container .events:hover .image {
-  transform: scaleX(1.1) scaleY(1.4);
+  transform: scaleX(1.1) scaleY(1.33);
 }
 
 @media (max-width: 450px) {
@@ -86,18 +92,22 @@
   font-weight: 500;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .btn {
     padding: 0.7rem 2rem !important;
     font-size: 1.2rem !important;
   }
   .box-container h3,
   div {
-    font-size: 2rem !important;
+    font-size: 1.5rem !important;
     font-weight: 400 !important;
   }
   .menu .box-container .pastEvent img {
     transform: scale(1.2, 1.6) !important;
+  }
+
+  .events-btn {
+    margin-top: 1.5rem !important;
   }
 }
 

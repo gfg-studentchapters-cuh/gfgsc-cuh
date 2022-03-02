@@ -6,9 +6,9 @@
       <img src="assets/images/event-plan.jpg" class="image" alt="" />
       <div class="middle">
         <h3>Hello Geeks!</h3>
-        <h3 class="event-type">We are planning something very special</h3>
+        <h3 class="event-type">We are planning something special</h3>
         <div class="price">till then have a look at some past events</div>
-        <a (click)="goToPastEvents()" class="btn">Past Events</a>
+        <a (click)="goToPastEvents()" class="btn events-btn">Past Events</a>
       </div>
     </div>
     <div *ngFor="let event of futureEvents" class="box events future-event">
@@ -18,7 +18,9 @@
         <div class="price">{{ event.eventTitle1 }}</div>
         <h3 class="event-type">{{ event.eventType }}</h3>
         <!-- <h3 class="result-1">Results on New Year</h3> -->
-        <a routerLink="/event/{{ event.eventId }}" class="btn">View Details</a>
+        <a routerLink="/event/{{ event.eventId }}" class="btn events-btn"
+          >View Details</a
+        >
       </div>
     </div>
   </div>
@@ -36,7 +38,7 @@
               {{ event.eventTitle1 + " " + event.eventType }}
             </h3>
             <h3>{{ event.eventTitle2 }}</h3>
-            <a routerLink="/event/{{ event.eventId }}" class="btn"
+            <a routerLink="/event/{{ event.eventId }}" class="btn events-btn"
               >View Details</a
             >
             <!-- <div class="price">
