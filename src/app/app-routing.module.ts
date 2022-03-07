@@ -6,6 +6,7 @@ import { EventDetailsComponent } from './event-details/event-details.component';
 import { EventsComponent } from './events/events.component';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { OurTeamComponent } from './our-team/our-team.component';
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   // { path: 'faq', component: FaqComponent },
   { path: 'contact-us', component: ContactUsComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

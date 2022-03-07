@@ -21,6 +21,14 @@ import {
   faCheck,
 } from '@fortawesome/free-solid-svg-icons';
 import { MatSliderModule } from '@angular/material/slider';
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from 'angularx-social-login';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -36,6 +44,7 @@ import { EventDetailsComponent } from './event-details/event-details.component';
 import { FaqTypeDirective } from './directives/faq-type.directive';
 import { LoaderComponent } from './loader/loader.component';
 import { EventGalleryComponent } from './event-gallery/event-gallery.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +61,7 @@ import { EventGalleryComponent } from './event-gallery/event-gallery.component';
     FaqTypeDirective,
     LoaderComponent,
     EventGalleryComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,8 +73,24 @@ import { EventGalleryComponent } from './event-gallery/event-gallery.component';
     NgbAccordionModule,
     MatSliderModule,
     AppRoutingModule,
+    SocialLoginModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '378721913451-bbbjji82oce2a2rsm4ndtil68oa2f712.apps.googleusercontent.com'
+            ),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

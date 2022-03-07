@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Router } from '@angular/router';
 import * as Events from 'src/assets/data/events.json';
 import { HelperService } from '../core/helper.service';
 
@@ -9,12 +9,28 @@ import { HelperService } from '../core/helper.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private helperService: HelperService) {}
+  constructor(private helperService: HelperService, private router: Router) {}
+  pastEvents: any[] = [];
+  events: any[] = [];
+  futureEvents: any[] = [];
 
   ngOnInit(): void {
     this.helperService.showLoader();
     setTimeout(() => {
       this.helperService.hideLoader();
     }, 2000);
+
+    this.events = Array.from(Events);
+    this.events.forEach((event) => {
+      if (event.eventEnded) {
+        this.pastEvents.push(event);
+      } else {
+        this.futureEvents.push(event);
+      }
+    });
+  }
+
+  goToPastEvents() {
+    this.router.navigate(['events']);
   }
 }
