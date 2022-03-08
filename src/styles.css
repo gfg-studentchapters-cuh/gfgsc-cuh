@@ -1215,6 +1215,12 @@ section {
   overflow: hidden;
 }
 
+@media (max-width: 450px) {
+  .circles {
+    display: none;
+  }
+}
+
 .home-text {
   font-size: 1.8rem !important;
 }
