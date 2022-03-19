@@ -14,7 +14,7 @@
   margin: 0 auto;
   padding-top: 8rem;
   width: 40%;
-  z-index: 999;
+  z-index: 1;
 }
 .stroke {
   stroke: black;

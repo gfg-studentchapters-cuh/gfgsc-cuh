@@ -45,6 +45,7 @@ import { FaqTypeDirective } from './directives/faq-type.directive';
 import { LoaderComponent } from './loader/loader.component';
 import { EventGalleryComponent } from './event-gallery/event-gallery.component';
 import { LoginComponent } from './login/login.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { LoginComponent } from './login/login.component';
     LoaderComponent,
     EventGalleryComponent,
     LoginComponent,
+    GalleryComponent,
   ],
   imports: [
     BrowserModule,
