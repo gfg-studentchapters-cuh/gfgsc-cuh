@@ -107,13 +107,17 @@
         Templates will not be considered.
       </p>
       <p>Any kind of Plagiarism will result in disqualification.</p> -->
-      <h4 *ngIf="event.eventEnded">event ended, check our winners</h4>
-      <h4 *ngIf="!event.eventEnded">Interested ? Participate now</h4>
+      <h4 *ngIf="event.eventEnded && event.winners?.length">
+        event ended, check our winners
+      </h4>
+      <h4 *ngIf="!event.eventEnded">Sounds Interesting ?</h4>
     </div>
 
     <div class="content">
       <h3 *ngIf="event.prizes?.length">Prize for Winners</h3>
-      <p *ngFor="let prize of event.prizes?.split('. ')">{{ prize }}</p>
+      <p #prizeList *ngFor="let prize of event.prizes?.split('. ')">
+        {{ prize }}
+      </p>
       <h3 *ngIf="!event.prizes?.length">Invited Speaker</h3>
       <div class="speaker-area" *ngFor="let speaker of event.speaker">
         <div *ngIf="!event.prizes?.length" class="speaker-profile">
@@ -137,7 +141,10 @@
           {{ speaker?.description }}
         </div>
       </div>
-      <a *ngIf="event.eventEnded" (click)="goToWinners()" class="btn"
+      <a
+        *ngIf="event.eventEnded && event.winners?.length"
+        (click)="goToWinners()"
+        class="btn"
         >our winners</a
       >
       <a
@@ -145,8 +152,11 @@
         href="{{ event.eventRegistrationLink }}"
         class="btn"
         target="_blank"
-        >register now</a
+        >{{ event.eventId !== 6 ? "register now" : "Join Webinar" }}</a
       >
+      <p *ngIf="event.eventId == 6" style="font-size: 12px">
+        *On 10 April @ 11:00 AM
+      </p>
     </div>
   </div>
 </section>

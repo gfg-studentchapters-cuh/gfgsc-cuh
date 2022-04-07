@@ -140,7 +140,11 @@
     "prizes": "",
     "eventEnded": true,
     "eventImage": "assets/images/event-4.jpeg",
-    "eventGallery": [],
+    "eventGallery": [
+      "assets/images/event-4.3.jpeg",
+      "assets/images/event-4.1.jpg",
+      "assets/images/event-4.2.jpg"
+    ],
     "eventRegistrationLink": "https://forms.gle/dKCzVG5qxEwAvvpY9",
     "winners": [],
     "speaker": [
@@ -161,16 +165,16 @@
     "eventId": 5,
     "eventDate": "11 Mar, 2022 21:30:00",
     "rulesAndRegulations": "",
-    "description": "College Level Hackathon is organized by the collaboration of GeeksForGeeks Student Chapters CUH and Bytecode Learners to prepare the participants for the Smart India Hackathon which is a National Hackathon Event. The Winning Team will be selected for next level and will win exciting prize pools and goodies moreover hands-on experience in live projects",
+    "description": "College Level Hackathon is organized by the GeeksForGeeks Student Chapters CUH to prepare the participants for the Smart India Hackathon which is a National Hackathon Event. The Winning Team will be selected for next level and will win exciting prize pools and goodies moreover hands-on experience in live projects",
     "prizes": "1st Prize - GeeksForGeeks T-Shirt (Leader only) + 1200 INR Discount Coupons + Certificates + Stickers +  Pens + Key-chains. 2nd Prize - 800 INR Discount Coupons + Certificates + Stickers +  Pens + Key-chains. 3rd Prize - 800 INR Discount Coupons + Certificates + Stickers +  Pens. Note: Prizes are for each member of the winning team",
     "eventEnded": true,
-    "eventImage": "assets/images/event-5.jpeg",
+    "eventImage": "assets/images/event-5.jpg",
     "eventGallery": [
-      "assets/images/event-5.1.jpg",
+      "assets/images/event-5.8.jpeg",
       "assets/images/event-5.2.jpg",
       "assets/images/event-5.3.jpg",
       "assets/images/event-5.4.jpg",
-      "assets/images/event-5.5.jpg",
+      "assets/images/event-5.7.jpeg",
       "assets/images/event-5.6.jpg"
     ],
     "eventRegistrationLink": "https://registration.pythonanywhere.com/",
@@ -212,5 +216,30 @@
       }
     ],
     "speaker": []
+  },
+  {
+    "eventTitle1": "Placement Series",
+    "eventTitle2": "E01",
+    "eventType": "Webinar",
+
+    "eventId": 6,
+    "eventDate": "10 Apr, 2022 11:00:00",
+    "rulesAndRegulations": "",
+    "description": "This is the First event of the Placement Series by GeeksForGeeks Student Chapters - Central University of Haryana. The event Guest is a Final Year IT Student, leading as a HEAD of TechnoByte (a society of Technical Events). The main focus of this webinar wil be how to crack product based companies, placement preparation, web development hackathons while persuing your graduation. He will be sharing his journey experience and will guide the students to land in their dream company.",
+    "prizes": "",
+    "eventEnded": false,
+    "eventImage": "assets/images/event-6.1.jpg",
+    "eventGallery": [],
+    "eventRegistrationLink": "https://meet.google.com/joa-wbny-nmg",
+    "winners": [],
+    "speaker": [
+      {
+        "name": "Mr. Sarthak Mittal",
+        "designation": "Upcoming SDE",
+        "organization": "Amazon",
+        "education": "NIT, Kurukshetra",
+        "description": "He is a Final Year IT Student, leading as a HEAD of TechnoByte (a society of Technical Events). Placed in Amazon (package 48 LPA)."
+      }
+    ]
   }
 ]

@@ -28,8 +28,14 @@ export class EventDetailsComponent implements OnInit, AfterViewInit {
   @ViewChild('hour') hourEl: ElementRef;
   @ViewChild('minute') minuteEL: ElementRef;
   @ViewChild('second') secondEL: ElementRef;
+  @ViewChild('prizeList') prizeListEl: ElementRef;
 
-  ngAfterViewInit(): void {}
+  ngAfterViewInit(): void {
+    if (!this.event?.prizes?.length) {
+      console.log(this.prizeListEl.nativeElement);
+      this.prizeListEl.nativeElement.style.display = 'none';
+    }
+  }
 
   countDate: number;
   eventId: number;
