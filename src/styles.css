@@ -278,7 +278,7 @@ section.margT-4 {
 
 .about .row {
   display: flex;
-  align-items: center;
+  align-items: self-start;
   /* background: var(--black); */
   /* border: 1px solid green; */
   flex-wrap: wrap;

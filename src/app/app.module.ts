@@ -46,6 +46,10 @@ import { LoaderComponent } from './loader/loader.component';
 import { EventGalleryComponent } from './event-gallery/event-gallery.component';
 import { LoginComponent } from './login/login.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { PaymentCheckoutComponent } from './payment-checkout/payment-checkout.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { RegistrationFormComponent } from './registration-form/registration-form.component';
 
 @NgModule({
   declarations: [
@@ -64,10 +68,13 @@ import { GalleryComponent } from './gallery/gallery.component';
     EventGalleryComponent,
     LoginComponent,
     GalleryComponent,
+    PaymentCheckoutComponent,
+    RegistrationFormComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
     CarouselModule,
     FontAwesomeModule,
@@ -76,6 +83,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     MatSliderModule,
     AppRoutingModule,
     SocialLoginModule,
+    MatDialogModule,
   ],
   providers: [
     {

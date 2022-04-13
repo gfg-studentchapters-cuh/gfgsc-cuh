@@ -15,8 +15,6 @@ export class FaqTypeDirective implements OnInit {
 
   ngOnInit(): void {
     this.target = this.renderer.selectRootElement(this.element).nativeElement;
-
-    console.log(this.target);
   }
 
   @HostListener('click') toggleFaq(event: Event) {

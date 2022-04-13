@@ -35,6 +35,8 @@ export class EventDetailsComponent implements OnInit, AfterViewInit {
       console.log(this.prizeListEl.nativeElement);
       this.prizeListEl.nativeElement.style.display = 'none';
     }
+
+    this.callCounter(this.countDate);
   }
 
   countDate: number;
@@ -50,12 +52,7 @@ export class EventDetailsComponent implements OnInit, AfterViewInit {
     this.route.params.subscribe((params) => {
       this.eventId = params.id;
       this.event = Events[this.eventId - 1];
-      console.log(this.event);
       this.countDate = new Date(this.event.eventDate).getTime();
-      console.log(this.event.rulesAndRegulations);
-      console.log(this.event.winners);
-      console.log(this.event);
-      this.callCounter(this.countDate);
     });
 
     this.helperService.showLoader();

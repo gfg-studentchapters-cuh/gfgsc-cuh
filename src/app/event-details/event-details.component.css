@@ -41,7 +41,8 @@
   margin: 30px 0 30px 0;
 }
 .right-part {
-  margin: 50px 0 30px 19px;
+  align-self: center;
+  margin: 0px 0px 0px 19px;
 }
 @media (max-width: 600px) {
   .speaker-profile {
@@ -59,4 +60,19 @@
     top: 20%;
     left: 15% !important;
   }
+}
+
+.icons a i {
+  color: white;
+  font-size: 20px;
+  padding: 0px;
+  margin: 5px 1px;
+}
+
+.icons a {
+  padding: 10px 0px;
+}
+
+.icons a:hover i {
+  color: #2f8d46;
 }

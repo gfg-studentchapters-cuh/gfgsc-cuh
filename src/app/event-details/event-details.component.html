@@ -9,88 +9,20 @@
       <div #second id="second">{{ s }}</div>
     </div>
     <h3>
-      {{ event.eventTitle1 + " " + event.eventType }}
+      {{
+        event.eventTitle1 + " " + (event.eventId == 7 ? "" : event.eventType)
+      }}
+      <br />
       <span> {{ event.eventTitle2 }} </span>
     </h3>
     <a (click)="goToAbout()" class="btn">know more</a>
   </div>
 </section>
 
-<!-- home section ends -->
-
-<!-- service section starts  -->
-
-<!-- <section class="service" id="service">
-  <h1 class="heading">our <span>services</span></h1>
-
-  <div class="box-container">
-    <div class="box">
-      <i class="fas fa-map-marker-alt"></i>
-      <h3>venue selection</h3>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
-        suscipit.
-      </p>
-    </div>
-
-    <div class="box">
-      <i class="fa fa-envelope"></i>
-      <h3>invitation card</h3>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
-        suscipit.
-      </p>
-    </div>
-
-    <div class="box">
-      <i class="fas fa-music"></i>
-      <h3>entertainment</h3>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
-        suscipit.
-      </p>
-    </div>
-
-    <div class="box">
-      <i class="fas fa-utensils"></i>
-      <h3>food and drinks</h3>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
-        suscipit.
-      </p>
-    </div>
-
-    <div class="box">
-      <i class="fas fa-photo-video"></i>
-      <h3>photos and videos</h3>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
-        suscipit.
-      </p>
-    </div>
-
-    <div class="box">
-      <i class="fas fa-birthday-cake"></i>
-      <h3>custom food</h3>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
-        suscipit.
-      </p>
-    </div>
-  </div>
-</section> -->
-
-<!-- service section ends -->
-
-<!-- about section starts  -->
-
 <section #about class="about" id="about">
   <h1 class="heading"><span>about</span> event</h1>
 
   <div class="row eventDescription">
-    <!-- <div class="image">
-      <img src="assets/images/about-img.jpg" alt="" />
-    </div> -->
     <div class="content">
       <h3 *ngIf="event.rulesAndRegulations?.length">rules & regulations</h3>
       <h3 *ngIf="event.description?.length">event description</h3>
@@ -100,13 +32,6 @@
       <p *ngFor="let point of event.description?.split('. ')">
         {{ point }}
       </p>
-      <!-- <p>Create a TEAM PAGE for the official GFG Student Chapters CUH</p>
-      <p>
-        Screen Record your whole progress.<br />GitHub link for the project is
-        required. <br />Recording link will be asked on shortlisting.<br />Pre-made
-        Templates will not be considered.
-      </p>
-      <p>Any kind of Plagiarism will result in disqualification.</p> -->
       <h4 *ngIf="event.eventEnded && event.winners?.length">
         event ended, check our winners
       </h4>
@@ -135,6 +60,25 @@
               <span id="speakerDesig">{{ speaker.organization }}</span>
             </p>
             <p class="speakerEdu">{{ speaker.education }}</p>
+            <div *ngIf="speaker?.linkedInLink.length" class="icons">
+              <a
+                href="{{ speaker?.linkedInLink }}
+          "
+              >
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div
+              *ngIf="speaker?.instaLink.length && !speaker?.linkedInLink.length"
+              class="icons"
+            >
+              <a
+                href="{{ speaker?.instaLink }}
+          "
+              >
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
         </div>
         <div *ngIf="!event.prizes?.length" class="speaker-description">
@@ -149,13 +93,24 @@
       >
       <a
         *ngIf="!event.eventEnded"
-        href="{{ event.eventRegistrationLink }}"
+        href="{{
+          event.eventRegistrationLink?.length
+            ? event.eventRegistrationLink
+            : event.liveEventLink
+        }}"
         class="btn"
         target="_blank"
-        >{{ event.eventId !== 6 ? "register now" : "Join Webinar" }}</a
+        >{{
+          event.eventRegistrationLink?.length ? "register now" : "Join Webinar"
+        }}</a
       >
-      <p *ngIf="event.eventId == 6" style="font-size: 12px">
-        *On 10 April @ 11:00 AM
+      <p
+        *ngIf="event.liveEventLink?.length && !event.eventEnded"
+        style="font-size: 12px"
+      >
+        *On {{ event.eventDate | slice: 0:12 }} @
+        {{ event.eventDate | slice: 13:18 }}
+        {{ +(event.eventDate | slice: 13:15) < 12 ? "AM" : "PM" }}
       </p>
     </div>
   </div>
@@ -203,70 +158,7 @@
         <li *ngFor="let prize of winner.prizesWon">
           <fa-icon [icon]="['fas', 'check']"></fa-icon> {{ prize }}
         </li>
-        <!-- <li>
-          <fa-icon [icon]="['fas', 'check']"></fa-icon> 1200 INR Discount Coupon
-        </li>
-        <li><fa-icon [icon]="['fas', 'check']"></fa-icon> Certificate</li>
-        <li><fa-icon [icon]="['fas', 'check']"></fa-icon> page live</li> -->
-      </ul>
-      <!-- <a href="https://byte2code.github.io/Semantic/" class="btn">see work</a> -->
-    </div>
-
-    <!-- <div class="box">
-      <h3 class="title">second position</h3>
-      <h3 class="amount">Mausam Kumar Giri</h3>
-      <ul>
-        <li>
-          <fa-icon [icon]="['fas', 'check']"></fa-icon> 1200 INR Discount Coupon
-        </li>
-        <li><fa-icon [icon]="['fas', 'check']"></fa-icon> Certificate</li>
-        <li><fa-icon [icon]="['fas', 'check']"></fa-icon> Stickers</li>
-        <li><fa-icon [icon]="['fas', 'check']"></fa-icon> Pens</li>
       </ul>
     </div>
-
-    <div class="box">
-      <h3 class="title">third position</h3>
-      <h3 class="amount">Mausam Kumar Giri</h3>
-      <ul>
-        <li>
-          <fa-icon [icon]="['fas', 'check']"></fa-icon> 800 INR Discount Coupon
-        </li>
-        <li><fa-icon [icon]="['fas', 'check']"></fa-icon> Certificate</li>
-      </ul>
-    </div> -->
   </div>
 </section>
-
-<!-- price section ends -->
-
-<!-- review section starts  -->
-
-<!-- review section ends -->
-
-<!-- contact section starts  -->
-
-<!-- <section class="contact" id="contact">
-  <h1 class="heading"><span>contact</span> us</h1>
-
-  <form action="">
-    <div class="inputBox">
-      <input type="text" placeholder="name" />
-      <input type="email" placeholder="email" />
-    </div>
-    <div class="inputBox">
-      <input type="number" placeholder="number" />
-      <input type="text" placeholder="subject" />
-    </div>
-    <textarea
-      name=""
-      placeholder="your message"
-      id=""
-      cols="30"
-      rows="10"
-    ></textarea>
-    <input type="submit" value="send message" class="btn" />
-  </form>
-</section> -->
-
-<!-- contact section ends -->

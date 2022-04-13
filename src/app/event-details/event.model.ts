@@ -11,6 +11,7 @@ export interface Event {
   eventImage?: string;
   eventGallery: string[];
   eventRegistrationLink?: string;
+  liveEventLink?: string;
   winners?: any[];
   speaker?: any[];
 }
