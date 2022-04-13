@@ -16,6 +16,7 @@
       "assets/images/1-3.png"
     ],
     "eventRegistrationLink": "",
+    "liveEventLink": "",
 
     "winners": [
       {
@@ -30,7 +31,9 @@
         "name": "Shubham Jaiswal",
         "designation": "Software Engineer",
         "organization": "Tata Consultancy Services",
-        "education": ""
+        "education": "",
+        "linkedInLink": "https://www.linkedin.com/in/jaiswalshubhamm/",
+        "instaLink": ""
       }
     ]
   },
@@ -48,6 +51,7 @@
     "eventImage": "assets/images/event-2-past.jpg",
     "eventGallery": [],
     "eventRegistrationLink": "",
+    "liveEventLink": "",
 
     "winners": [
       {
@@ -95,6 +99,7 @@
     "eventImage": "assets/images/event-3-past.jpg",
     "eventGallery": [],
     "eventRegistrationLink": "",
+    "liveEventLink": "",
 
     "winners": [
       {
@@ -146,6 +151,7 @@
       "assets/images/event-4.2.jpg"
     ],
     "eventRegistrationLink": "https://forms.gle/dKCzVG5qxEwAvvpY9",
+    "liveEventLink": "",
     "winners": [],
     "speaker": [
       {
@@ -153,7 +159,9 @@
         "designation": "Mentor",
         "organization": "GeeksForGeeks",
         "education": "NIT, Jamshedpur",
-        "description": "She is graduated from National Institute of Technology, Jamshedpur. She's been mentoring a lot of students through live sessions and workshops as a part of GeeksForGeeks."
+        "description": "She is graduated from National Institute of Technology, Jamshedpur. She's been mentoring a lot of students through live sessions and workshops as a part of GeeksForGeeks.",
+        "linkedInLink": "https://www.linkedin.com/in/kirti-gera/",
+        "instaLink": ""
       }
     ]
   },
@@ -178,6 +186,7 @@
       "assets/images/event-5.6.jpg"
     ],
     "eventRegistrationLink": "https://registration.pythonanywhere.com/",
+    "liveEventLink": "",
     "winners": [
       {
         "position": "First",
@@ -227,10 +236,14 @@
     "rulesAndRegulations": "",
     "description": "This is the First event of the Placement Series by GeeksForGeeks Student Chapters - Central University of Haryana. The event Guest is a Final Year IT Student, leading as Vice-President of TechnoByte (a society of Technical Events). The main focus of this webinar wil be how to crack product based companies, placement preparation, web development hackathons while persuing your graduation. He will be sharing his journey experience and will guide the students to land in their dream company.",
     "prizes": "",
-    "eventEnded": false,
+    "eventEnded": true,
     "eventImage": "assets/images/event-6.1.jpg",
-    "eventGallery": [],
-    "eventRegistrationLink": "https://meet.google.com/joa-wbny-nmg",
+    "eventGallery": [
+      "assets/images/event-6.3.jpeg",
+      "assets/images/event-6.2.jpeg"
+    ],
+    "eventRegistrationLink": "",
+    "liveEventLink": "https://meet.google.com/joa-wbny-nmg",
     "winners": [],
     "speaker": [
       {
@@ -238,7 +251,37 @@
         "designation": "Upcoming SDE",
         "organization": "Amazon",
         "education": "NIT, Kurukshetra",
-        "description": "He is a Final Year IT Student, leading as Vice-President of TechnoByte (a society of Technical Events). Placed in Amazon (package 44.34 LPA)."
+        "description": "He is a Final Year IT Student, leading as Vice-President of TechnoByte (a society of Technical Events). Placed in Amazon (package 44.34 LPA).",
+        "linkedInLink": "https://www.linkedin.com/in/sarthakmittal1409",
+        "instaLink": ""
+      }
+    ]
+  },
+  {
+    "eventTitle1": "Bhimrao Ambedkar : ",
+    "eventTitle2": "from struggle to success",
+    "eventType": "Webinar",
+
+    "eventId": 7,
+    "eventDate": "14 Apr, 2022 12:00:00",
+    "rulesAndRegulations": "",
+    "description": "Department of computer science and engineering of Central University of Haryana and centre for Dr BR Ambedkar studies, on the occasion of Birth Anniversary of Babasaheb Ambedkar organizes the webinar titled as Bhimrao Ambedkar: from struggle to success. The GeeksForGeeks Student Chapters CUH will manage the event and audience, the webinar will be live on 14 April 2022 at 12:00 PM sharply",
+    "prizes": "",
+    "eventEnded": false,
+    "eventImage": "assets/images/event-7.jpg",
+    "eventGallery": [],
+    "eventRegistrationLink": "",
+    "liveEventLink": "https://meet.google.com/zjg-wqhi-wcx",
+    "winners": [],
+    "speaker": [
+      {
+        "name": "Dr. Pritam Singh",
+        "designation": "Assistant Director",
+        "organization": "Centre for BR Ambedkar Studies",
+        "education": "Kurukshetra University",
+        "description": "",
+        "linkedInLink": "",
+        "instaLink": "https://www.instagram.com/pritam.bangad/?hl=en"
       }
     ]
   }
