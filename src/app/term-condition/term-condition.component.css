@@ -1,0 +1,12 @@
+.siteLink {
+  text-transform: lowercase !important;
+  color: #2f8d46;
+}
+
+.contentt span {
+  display: block;
+}
+
+.about .row .content h3.terms {
+  font-size: 2.5rem;
+}

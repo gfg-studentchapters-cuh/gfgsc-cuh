@@ -50,6 +50,8 @@ import { PaymentCheckoutComponent } from './payment-checkout/payment-checkout.co
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
+import { TermConditionComponent } from './term-condition/term-condition.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import { RegistrationFormComponent } from './registration-form/registration-form
     GalleryComponent,
     PaymentCheckoutComponent,
     RegistrationFormComponent,
+    TermConditionComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,

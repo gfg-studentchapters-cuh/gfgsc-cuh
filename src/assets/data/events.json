@@ -267,9 +267,13 @@
     "rulesAndRegulations": "",
     "description": "Department of computer science and engineering of Central University of Haryana and centre for Dr BR Ambedkar studies, on the occasion of Birth Anniversary of Babasaheb Ambedkar organizes the webinar titled as Bhimrao Ambedkar: from struggle to success. The GeeksForGeeks Student Chapters CUH will manage the event and audience, the webinar will be live on 14 April 2022 at 12:00 PM sharply",
     "prizes": "",
-    "eventEnded": false,
+    "eventEnded": true,
     "eventImage": "assets/images/event-7.jpg",
-    "eventGallery": [],
+    "eventGallery": [
+      "assets/images/event-7.1.jpeg",
+      "assets/images/event-7.2.jpeg",
+      "assets/images/event-7.3.jpeg"
+    ],
     "eventRegistrationLink": "",
     "liveEventLink": "https://meet.google.com/zjg-wqhi-wcx",
     "winners": [],

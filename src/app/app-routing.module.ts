@@ -9,7 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { OurTeamComponent } from './our-team/our-team.component';
 import { PaymentCheckoutComponent } from './payment-checkout/payment-checkout.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
+import { TermConditionComponent } from './term-condition/term-condition.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,6 +26,8 @@ const routes: Routes = [
   // { path: 'faq', component: FaqComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'term-condition', component: TermConditionComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
   // { path: 'checkout', component: PaymentCheckoutComponent },
   // { path: 'registration-form', component: RegistrationFormComponent },
 ];
