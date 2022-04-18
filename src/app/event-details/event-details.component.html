@@ -24,13 +24,17 @@
 
   <div class="row eventDescription">
     <div class="content">
-      <h3 *ngIf="event.rulesAndRegulations?.length">rules & regulations</h3>
       <h3 *ngIf="event.description?.length">event description</h3>
-      <p *ngFor="let rule of event.rulesAndRegulations?.split('. ')">
-        {{ rule }}
-      </p>
       <p *ngFor="let point of event.description?.split('. ')">
         {{ point }}
+      </p>
+      <div
+        *ngIf="event.description?.length && event.rulesAndRegulations?.length"
+        class="space"
+      ></div>
+      <h3 *ngIf="event.rulesAndRegulations?.length">rules & regulations</h3>
+      <p *ngFor="let rule of event.rulesAndRegulations?.split('. ')">
+        {{ rule }}
       </p>
       <h4 *ngIf="event.eventEnded && event.winners?.length">
         event ended, check our winners
@@ -43,9 +47,14 @@
       <p #prizeList *ngFor="let prize of event.prizes?.split('. ')">
         {{ prize }}
       </p>
-      <h3 *ngIf="!event.prizes?.length">Invited Speaker</h3>
+      <h3 *ngIf="!event.prizes?.length && event.speaker?.length">
+        Invited Speaker
+      </h3>
       <div class="speaker-area" *ngFor="let speaker of event.speaker">
-        <div *ngIf="!event.prizes?.length" class="speaker-profile">
+        <div
+          *ngIf="!event.prizes?.length && event.speaker?.length"
+          class="speaker-profile"
+        >
           <div class="left-part">
             <img
               class="speakerImg"
@@ -81,10 +90,21 @@
             </div>
           </div>
         </div>
-        <div *ngIf="!event.prizes?.length" class="speaker-description">
+        <div
+          *ngIf="!event.prizes?.length && event.speaker?.length"
+          class="speaker-description"
+        >
           {{ speaker?.description }}
         </div>
       </div>
+      <div
+        *ngIf="event.prizes?.length && event.judgingCriteria?.length"
+        class="space"
+      ></div>
+      <h3 *ngIf="event.judgingCriteria?.length">Judging Criteria</h3>
+      <p #prizeList *ngFor="let criteria of event.judgingCriteria?.split('. ')">
+        {{ criteria }}
+      </p>
       <a
         *ngIf="event.eventEnded && event.winners?.length"
         (click)="goToWinners()"
@@ -92,17 +112,17 @@
         >our winners</a
       >
       <a
-        *ngIf="!event.eventEnded"
-        href="{{
-          event.eventRegistrationLink?.length
-            ? event.eventRegistrationLink
-            : event.liveEventLink
-        }}"
+        *ngIf="!event.eventEnded && event.liveEventLink?.length"
+        href="{{ event.liveEventLink }}"
         class="btn"
         target="_blank"
-        >{{
-          event.eventRegistrationLink?.length ? "register now" : "Join Webinar"
-        }}</a
+        >{{ "Join Webinar" }}</a
+      >
+      <a
+        #eventEntryBtn
+        *ngIf="!event.isEventFree && !event.eventEnded"
+        class="btn"
+        >{{ "register now" }}</a
       >
       <p
         *ngIf="event.liveEventLink?.length && !event.eventEnded"

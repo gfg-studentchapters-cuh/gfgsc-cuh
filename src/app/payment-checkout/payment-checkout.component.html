@@ -6,31 +6,55 @@
       <div class="ticket--center--row">
         <div class="ticket--center--col">
           <span class="tkt-head">Your ticket for</span>
-          <strong>Smart India Hackathon</strong>
+          <strong>{{
+            currEvent.eventTitle1 +
+              " " +
+              currEvent.eventTitle2 +
+              " " +
+              currEvent.eventType
+          }}</strong>
         </div>
         <div class="ticket--center--col">
           <span class="tkt-head">Event fee</span>
-          <strong>Rs. 50</strong>
+          <strong>Rs. {{ currEvent.eventFee }}</strong>
         </div>
       </div>
       <div class="ticket--center--row">
         <div class="ticket--center--col">
           <span class="ticket--info--title">Date and time</span>
-          <span class="ticket--info--subtitle">Thursday, May 14 2020</span>
-          <span class="ticket--info--content">7:00 am to 9:00 pm (GMT+1)</span>
+          <span class="ticket--info--subtitle">{{
+            currEvent.eventDate | slice: 0:13
+          }}</span>
+          <!-- <span
+            *ngIf="+(currEvent.eventDate | slice: 13:15) == 12"
+            class="ticket--info--content"
+            >{{ (currEvent.eventDate | slice: 13:19) + " PM" }}
+          </span> -->
+          <span class="ticket--info--content">{{ dateFormat() }}</span>
+          <!-- <span
+            *ngIf="!(+(currEvent.eventDate | slice: 13:15) == 12)"
+            class="ticket--info--content"
+          >
+            {{
+              +(currEvent.eventDate | slice: 13:15) < 12
+                ? (currEvent.eventDate | slice: 13:19) + " AM"
+                : +(currEvent.eventDate | slice: 13:15) -
+                  12 +
+                  (currEvent.eventDate | slice: 16:19 + "") +
+                  " PM"
+            }}</span
+          > -->
         </div>
         <div class="ticket--center--col">
           <span class="ticket--info--title">Event Location</span>
-          <span class="ticket--info--subtitle">Room no. 007 </span>
-          <span class="ticket--info--content"
-            >SOET Block, Central University of Haryana</span
-          >
+          <span class="ticket--info--subtitle">{{ roomFormat() }}</span>
+          <span class="ticket--info--content">{{ addressFormat() }}</span>
         </div>
       </div>
       <div class="ticket--center--row">
         <div class="ticket--center--col">
           <span class="ticket--info--title">Event type</span>
-          <span class="ticket--info--content">Competition</span>
+          <span class="ticket--info--content">{{ currEvent.eventType }}</span>
         </div>
         <div class="ticket--center--col" style="align-self: center">
           <button #buy id="rzp-button1">

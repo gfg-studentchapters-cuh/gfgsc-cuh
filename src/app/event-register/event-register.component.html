@@ -1,0 +1,115 @@
+<div class="container" id="container">
+  <div class="form-container sign-in-container">
+    <form [formGroup]="eventRegistrationForm" (ngSubmit)="onRegister()">
+      <h2>Register</h2>
+
+      <input
+        type="text"
+        placeholder="Name"
+        name="name"
+        formControlName="name"
+      />
+      <div class="error-div">
+        <span
+          *ngIf="
+            eventRegistrationForm.controls.name.invalid &&
+            (eventRegistrationForm.controls.name.dirty ||
+              eventRegistrationForm.controls.name.touched)
+          "
+          class="error-input"
+        >
+          * Name is required and must be greater than 3 charecters
+        </span>
+      </div>
+      <input
+        type="email"
+        placeholder="Email"
+        name="email"
+        formControlName="email"
+      />
+      <div class="error-div">
+        <span
+          *ngIf="
+            eventRegistrationForm.controls.email.invalid &&
+            (eventRegistrationForm.controls.email.dirty ||
+              eventRegistrationForm.controls.email.touched)
+          "
+          class="error-input"
+        >
+          * Email is required and must be valid
+        </span>
+      </div>
+      <input
+        type="text"
+        placeholder="Roll No."
+        name="rollNo"
+        formControlName="rollNo"
+      />
+      <div class="error-div">
+        <span
+          *ngIf="
+            eventRegistrationForm.controls.rollNo.invalid &&
+            (eventRegistrationForm.controls.rollNo.dirty ||
+              eventRegistrationForm.controls.rollNo.touched)
+          "
+          class="error-input"
+        >
+          * Roll No is required and must be valid
+        </span>
+      </div>
+      <input
+        type="text"
+        placeholder="Contact No."
+        name="phone"
+        formControlName="phone"
+      />
+      <div class="error-div">
+        <span
+          *ngIf="
+            eventRegistrationForm.controls.phone.invalid &&
+            (eventRegistrationForm.controls.phone.dirty ||
+              eventRegistrationForm.controls.phone.touched)
+          "
+          class="error-input"
+        >
+          * Contact No. is required and must be 10 digits
+        </span>
+      </div>
+      <input
+        type="text"
+        placeholder="Department"
+        name="branch"
+        formControlName="branch"
+      />
+      <div class="error-div">
+        <span
+          *ngIf="
+            eventRegistrationForm.controls.branch.invalid &&
+            (eventRegistrationForm.controls.branch.dirty ||
+              eventRegistrationForm.controls.branch.touched)
+          "
+          class="error-input"
+        >
+          * Department is required (example Electrical Engineering, CSE, Civil
+          Engineering, PPT, etc)
+        </span>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-right">
+        <h1>Hola, Geeks!!!</h1>
+        <!-- <p>
+          Enter your details and register now for the
+          <span #eventTitle>{{ eventTitle }} </span> event!
+        </p> -->
+        <p>
+          Enter your details and register now for the event <br />
+          <span style="font-weight: bold">{{ eventTitle }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

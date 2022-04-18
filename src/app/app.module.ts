@@ -48,10 +48,10 @@ import { LoginComponent } from './login/login.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PaymentCheckoutComponent } from './payment-checkout/payment-checkout.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
-import { RegistrationFormComponent } from './registration-form/registration-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TermConditionComponent } from './term-condition/term-condition.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { EventRegisterComponent } from './event-register/event-register.component';
 
 @NgModule({
   declarations: [
@@ -71,14 +71,15 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     LoginComponent,
     GalleryComponent,
     PaymentCheckoutComponent,
-    RegistrationFormComponent,
     TermConditionComponent,
     PrivacyPolicyComponent,
+    EventRegisterComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     CarouselModule,
     FontAwesomeModule,

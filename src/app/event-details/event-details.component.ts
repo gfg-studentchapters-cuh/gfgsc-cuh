@@ -8,7 +8,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HelperService } from '../core/helper.service';
 
 @Component({
@@ -20,8 +20,10 @@ export class EventDetailsComponent implements OnInit, AfterViewInit {
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
-    private helperService: HelperService
+    private helperService: HelperService,
+    private router: Router
   ) {}
+  @ViewChild('eventEntryBtn') eventEntryBtn: ElementRef | undefined;
   @ViewChild('about') aboutDiv: ElementRef | undefined;
   @ViewChild('winners') winnersDiv: ElementRef | undefined;
   @ViewChild('day') dayEL: ElementRef;
@@ -35,8 +37,12 @@ export class EventDetailsComponent implements OnInit, AfterViewInit {
       console.log(this.prizeListEl.nativeElement);
       this.prizeListEl.nativeElement.style.display = 'none';
     }
-
     this.callCounter(this.countDate);
+
+    this.eventEntryBtn?.nativeElement.addEventListener('click', () => {
+      console.log('clicked');
+      this.router.navigate(['/event-register', this?.event?.eventId]);
+    });
   }
 
   countDate: number;

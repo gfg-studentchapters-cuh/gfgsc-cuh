@@ -76,3 +76,7 @@
 .icons a:hover i {
   color: #2f8d46;
 }
+
+.space {
+  height: 30px;
+}

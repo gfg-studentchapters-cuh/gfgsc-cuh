@@ -14,6 +14,10 @@ export interface Event {
   liveEventLink?: string;
   winners?: any[];
   speaker?: any[];
+  isEventFree?: boolean;
+  eventLocation?: string;
+  eventFee?: number;
+  judgingCriteria?: string;
 }
 
 export interface Winners {
