@@ -1,14 +1,70 @@
-.mailImage img {
+/* .mailImage img {
   margin-top: 10%;
   width: 70%;
   height: 80%;
 }
 .mailImage {
   text-align: center;
+} */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.contact-info {
+  padding: 40px 40px;
+  width: 40%;
+}
+
+.contact-info h2 {
+  color: white;
+  font-size: 32px;
+  line-height: 1.8;
+}
+
+.contact-info p {
+  color: white;
+  font-size: 16px;
+  line-height: 1.8;
+  text-transform: none;
+}
+
+.disabled {
+  /* background-color: grey;
+  color: white; */
+  cursor: not-allowed;
+}
+
+.error-div {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.error-input {
+  color: red;
+  font-size: 10px;
 }
 
 @media (max-width: 450px) {
   .contact .row form {
     padding: 2rem 3rem !important;
+  }
+
+  .contact-info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 850px) {
+  .contact-info {
+    width: 100%;
   }
 }

@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class HttpApiService {
   constructor(private http: HttpClient) {}
   EVENT_REG_URL = 'https://regapi.pythonanywhere.com/api/';
+  CONTACT_US_URL = 'http://nilabh22.pythonanywhere.com/api/';
 
   //   headers = new HttpHeaders({
   //     'Content-Type': 'application/json',
@@ -18,5 +19,9 @@ export class HttpApiService {
 
   registerForEvent(data: any) {
     return this.http.post(this.EVENT_REG_URL, data);
+  }
+
+  contactUs(data: any) {
+    return this.http.post(this.CONTACT_US_URL, data);
   }
 }

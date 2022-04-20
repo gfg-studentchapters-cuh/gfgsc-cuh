@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { OurTeamComponent } from './our-team/our-team.component';
 import { PaymentCheckoutComponent } from './payment-checkout/payment-checkout.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
 import { TermConditionComponent } from './term-condition/term-condition.component';
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'checkout/:id', component: PaymentCheckoutComponent },
   { path: 'event-register/:id', component: EventRegisterComponent },
+  { path: 'refund-policy', component: RefundPolicyComponent },
 ];
 
 @NgModule({

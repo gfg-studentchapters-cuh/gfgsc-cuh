@@ -2,29 +2,87 @@
   <h1 class="heading"><span>contact</span> us</h1>
 
   <div class="row">
-    <div class="mailImage">
-      <img src="assets/images/mail.png" alt="" />
+    <div class="contact-info">
+      <!-- <img src="assets/images/mail.png" alt="" /> -->
+      <h2>Address <i class="fa fa-location-arrow" aria-hidden="true"></i></h2>
+      <p>
+        S.N Bose Boys Hostel, Gate No. 2, <br />
+        Central Universiy of Haryana, Jant, Mahendragarh, Haryana, 123029
+      </p>
+      <h2>Reach us</h2>
+      <p>
+        Phone Number : +91 9369099059 <br />
+        Email : cuh.gfgsc@gmail.com
+      </p>
     </div>
 
-    <form action="">
+    <form [formGroup]="contactUsForm" (ngSubmit)="onContactUs()">
       <div class="inputBox">
         <span class="fas fa-user"></span>
-        <input type="text" placeholder="Name" />
+        <input
+          type="text"
+          placeholder="Name"
+          name="name"
+          formControlName="name"
+        />
       </div>
+      <div class="error-div">
+        <span
+          *ngIf="
+            contactUsForm.controls.name.invalid &&
+            (contactUsForm.controls.name.dirty ||
+              contactUsForm.controls.name.touched)
+          "
+          class="error-input"
+        >
+          * Name is required and must be greater than 3 charecters
+        </span>
+      </div>
+
       <div class="inputBox">
         <span class="fas fa-envelope"></span>
-        <input type="email" placeholder="Email" />
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          formControlName="email"
+        />
+      </div>
+      <div class="error-div">
+        <span
+          *ngIf="
+            contactUsForm.controls.email.invalid &&
+            (contactUsForm.controls.email.dirty ||
+              contactUsForm.controls.email.touched)
+          "
+          class="error-input"
+        >
+          * Email is required and must be valid
+        </span>
       </div>
       <div class="inputBox">
         <span class="fas fa-comment"></span>
-        <input type="text" placeholder="Your Message" />
+        <input
+          type="text"
+          placeholder="Your Message"
+          name="message"
+          formControlName="message"
+        />
       </div>
-      <input
-        type="button"
-        routerLink="contact-us"
-        value="contact now"
-        class="btn"
-      />
+      <div class="error-div">
+        <span
+          *ngIf="
+            contactUsForm.controls.message.invalid &&
+            (contactUsForm.controls.message.dirty ||
+              contactUsForm.controls.message.touched)
+          "
+          class="error-input"
+        >
+          * Message is required
+        </span>
+      </div>
+      <input type="submit" value="contact now" class="btn" [ngClass]="{disabled:
+      contactUsForm.invalid}" />
     </form>
   </div>
 </section>

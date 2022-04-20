@@ -213,3 +213,32 @@
 .ticket--center--col > .tkt-head {
   color: azure;
 }
+
+@media (max-width: 450px) {
+  .ticket {
+    width: 100%;
+  }
+  .ticket--center {
+    padding: 20px;
+  }
+
+  .ticket--center--row {
+    display: block;
+  }
+
+  .ticket--center--row:not(:last-child) {
+    padding-bottom: 15px;
+  }
+
+  .ticket--center--col {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  .ticket--info--title {
+    font-size: 24px;
+  }
+  .ticket--center--row:first-child span {
+    font-size: 24px;
+  }
+}

@@ -97,13 +97,14 @@ export class PaymentCheckoutComponent implements OnInit, AfterViewInit {
   }
 
   checkout(orderId: any) {
+    console.log(orderId);
     const options = {
-      key: '', // Enter the Key ID generated from the Dashboard
+      key: 'rzp_live_3N60iCxd96C4aR', // Enter the Key ID generated from the Dashboard
       amount: '5000', // Amount is in currency subunits. Default currency is INR. Hence, 100 refers to 100 paise
       currency: 'INR',
       name: 'GFG SC CUH',
       description: 'Event Registration Fee',
-      image: '/assets/images/gfg-logo.png',
+      image: 'https://geeksforgeekscuh.tech/assets/images/gfg-logo.png',
       order_id: orderId, //This is a sample Order ID. Pass the `id` obtained in the previous step
       handler: async (response: any) => {
         const paymentId = response.razorpay_payment_id;
@@ -148,8 +149,8 @@ export class PaymentCheckoutComponent implements OnInit, AfterViewInit {
       },
       prefill: {
         name: 'USER NAME',
-        email: 'test@example.com',
-        contact: '9999999999',
+        email: `${this.currUser.email}`,
+        contact: `${this.currUser.phone}`,
       },
       notes: {
         address: 'Razorpay Corporate Office',
@@ -159,7 +160,29 @@ export class PaymentCheckoutComponent implements OnInit, AfterViewInit {
       },
     };
 
+    // const options = {
+    //   key: 'rzp_live_3N60iCxd96C4aR', // Enter the Key ID generated from the Dashboard
+    //   amount: '50000', // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    //   currency: 'INR',
+    //   name: 'Acme Corp',
+    //   description: 'Test Transaction',
+    //   image: 'https://example.com/your_logo',
+    //   order_id: '', //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    //   callback_url: 'https://eneqd3r9zrjok.x.pipedream.net/',
+    //   prefill: {
+    //     name: 'Gaurav Kumar',
+    //     email: 'gaurav.kumar@example.com',
+    //     contact: '9999999999',
+    //   },
+    //   notes: {
+    //     address: 'Razorpay Corporate Office',
+    //   },
+    //   theme: {
+    //     color: '#3399cc',
+    //   },
+    // };
     const rzp1 = new this.winRef.nativeWindow.Razorpay(options);
+    console.log(options);
 
     rzp1.on('payment.failed', (response: any) => {
       console.log('Error in Payment!!!');

@@ -52,6 +52,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TermConditionComponent } from './term-condition/term-condition.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { EventRegisterComponent } from './event-register/event-register.component';
+import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { EventRegisterComponent } from './event-register/event-register.componen
     TermConditionComponent,
     PrivacyPolicyComponent,
     EventRegisterComponent,
+    RefundPolicyComponent,
   ],
   imports: [
     BrowserModule,

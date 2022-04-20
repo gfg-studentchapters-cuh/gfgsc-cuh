@@ -2,7 +2,6 @@
   <div class="form-container sign-in-container">
     <form [formGroup]="eventRegistrationForm" (ngSubmit)="onRegister()">
       <h2>Register</h2>
-
       <input
         type="text"
         placeholder="Name"
@@ -105,9 +104,22 @@
           Enter your details and register now for the
           <span #eventTitle>{{ eventTitle }} </span> event!
         </p> -->
-        <p>
+        <p class="event-desc">
           Enter your details and register now for the event <br />
           <span style="font-weight: bold">{{ eventTitle }}</span>
+        </p>
+        <p class="for-mobile-event-title">
+          <span style="font-weight: bold">{{ eventTitle }}</span>
+        </p>
+        <p *ngIf="!currEvent.isEventFree" class="refund-policy">
+          On the next page you will be asked to pay the event registration
+          amount i.e Rs. {{ currEvent.eventFee }},
+          <span
+            >No Refund will be possible after successful payment of Event
+            fee.</span
+          >
+          If amount deducted from your account but payment failed, money will be
+          refunded within 5-7 working days.
         </p>
       </div>
     </div>
