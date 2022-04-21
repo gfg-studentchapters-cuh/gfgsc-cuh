@@ -1,6 +1,9 @@
 .eventDetail {
   display: block !important;
 }
+.btn2 {
+  margin-right: 30px;
+}
 #eventDetailContent {
   text-align: center;
   padding-top: 30rem;
@@ -50,6 +53,11 @@
   }
   #eventDetailContent {
     padding-top: 100%;
+  }
+  .btn1 {
+    display: block;
+    width: 200px;
+    margin-left: 60px;
   }
 }
 @media (max-width: 900px) {

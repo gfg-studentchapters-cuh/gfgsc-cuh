@@ -45,6 +45,10 @@ export class EventDetailsComponent implements OnInit, AfterViewInit {
     });
   }
 
+  entry() {
+    this.router.navigate(['/event-register', this?.event?.eventId]);
+  }
+
   countDate: number;
   eventId: number;
   event: Event;
