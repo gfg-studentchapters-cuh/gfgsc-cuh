@@ -16,7 +16,9 @@
       <span> {{ event.eventTitle2 }} </span>
     </h3>
     <a (click)="goToAbout()" class="btn btn1 btn2">know more</a>
-    <a (click)="entry()" class="btn btn1">register now</a>
+    <a *ngIf="!event.eventEnded" (click)="entry()" class="btn btn1"
+      >register now</a
+    >
   </div>
 </section>
 
@@ -167,7 +169,46 @@
 
 <!-- price section starts  -->
 
-<section *ngIf="event.winners?.length" #winners class="price" id="price">
+<ng-container *ngIf="event.winners?.length == 2">
+  <section *ngIf="event?.winners[0].length" #winners class="price" id="price">
+    <h1 class="heading">our <span>winners</span></h1>
+
+    <div class="box-container">
+      <div class="box" *ngFor="let winner of event?.winners[0]">
+        <h3 class="title">{{ winner.position }} position</h3>
+        <h3 class="amount">{{ winner.name }}</h3>
+        <p class="college">{{ winner.collegeName }}</p>
+        <ul>
+          <li *ngFor="let prize of winner.prizesWon">
+            <fa-icon [icon]="['fas', 'check']"></fa-icon> {{ prize }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section *ngIf="event?.winners[1].length" #winners class="price" id="price">
+    <h1 class="heading">Departmental <span>winners</span></h1>
+
+    <div class="box-container">
+      <div class="box" *ngFor="let winner of event?.winners[1]">
+        <h3 class="title">{{ winner.position }} position</h3>
+        <h3 class="amount">{{ winner.name }}</h3>
+        <p class="college">{{ winner.collegeName }}</p>
+        <ul>
+          <li *ngFor="let prize of winner.prizesWon">
+            <fa-icon [icon]="['fas', 'check']"></fa-icon> {{ prize }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</ng-container>
+<section
+  *ngIf="event.winners?.length && !(event.winners?.length == 2)"
+  #winners
+  class="price"
+  id="price"
+>
   <h1 class="heading">our <span>winners</span></h1>
 
   <div class="box-container">

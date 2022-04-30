@@ -12,7 +12,7 @@ export interface Event {
   eventGallery: string[];
   eventRegistrationLink?: string;
   liveEventLink?: string;
-  winners?: any[];
+  winners?: any;
   speaker?: any[];
   isEventFree?: boolean;
   eventLocation?: string;
