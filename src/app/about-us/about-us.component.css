@@ -1439,3 +1439,13 @@
     z-index: 0;
   }
 }
+
+#registrationTerms {
+  padding-top: 0;
+}
+
+@media (max-width: 500px) {
+  #registrationTerms {
+    padding-top: 2rem;
+  }
+}

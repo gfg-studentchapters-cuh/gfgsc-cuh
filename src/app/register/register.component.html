@@ -1,0 +1,347 @@
+<section class="products margT-10" id="products">
+  <div>
+    <h1 class="heading">Join us as a <span>Team</span></h1>
+    <div id="multi-step-form-container">
+      <!-- Form Steps / Progress Bar -->
+      <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
+        <!-- Step 1 -->
+        <li class="form-stepper-active text-center form-stepper-list" step="1">
+          <a class="mx-2">
+            <span class="form-stepper-circle">
+              <span>1</span>
+            </span>
+            <div class="label">Personal Details</div>
+          </a>
+        </li>
+        <!-- Step 2 -->
+        <li
+          class="form-stepper-unfinished text-center form-stepper-list"
+          step="2"
+        >
+          <a class="mx-2">
+            <span class="form-stepper-circle text-muted">
+              <span>2</span>
+            </span>
+            <div class="label text-muted">University Details</div>
+          </a>
+        </li>
+        <!-- Step 3 -->
+        <li
+          class="form-stepper-unfinished text-center form-stepper-list"
+          step="3"
+        >
+          <a class="mx-2">
+            <span class="form-stepper-circle text-muted">
+              <span>3</span>
+            </span>
+            <div class="label text-muted">Work Details</div>
+          </a>
+        </li>
+      </ul>
+      <!-- Step Wise Form Content -->
+      <form
+        [formGroup]="registerForm"
+        id="userAccountSetupForm"
+        name="userAccountSetupForm"
+        enctype="multipart/form-data"
+      >
+        <section id="step-1" class="form-step">
+          <div class="form-box">
+            <div class="login-box">
+              <form formGroupName="personalDetailsForm">
+                <div class="user-box">
+                  <input
+                    type="text"
+                    name=""
+                    required=""
+                    formControlName="fullName"
+                  />
+                  <label>Name</label>
+                  <div
+                    *ngIf="
+                      fullName?.invalid &&
+                      (fullName?.touched || fullName?.dirty)
+                    "
+                    class="error"
+                    style="color: red; font-size: 10px"
+                  >
+                    <div *ngIf="fullName?.errors?.['required']">
+                      Name can't be empty
+                    </div>
+                    <div *ngIf="fullName?.errors?.['minlength']">
+                      Name can't be that small
+                    </div>
+                  </div>
+                </div>
+                <div class="user-box">
+                  <input
+                    type="text"
+                    name=""
+                    required=""
+                    formControlName="email"
+                  />
+                  <label>Email</label>
+                  <div
+                    *ngIf="email?.invalid && (email?.touched || email?.dirty)"
+                    class="error"
+                    style="color: red; font-size: 10px"
+                  >
+                    <div *ngIf="email?.errors?.['required']">
+                      Email can't be empty
+                    </div>
+                    <div *ngIf="email?.errors?.['invalidEmail']">
+                      We need a valid email address for communication
+                    </div>
+                  </div>
+                </div>
+                <div class="user-box">
+                  <input
+                    type="text"
+                    name=""
+                    required=""
+                    formControlName="phone"
+                  />
+                  <label>Phone</label>
+                  <div
+                    *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)"
+                    class="error"
+                    style="color: red; font-size: 10px"
+                  >
+                    <div *ngIf="phone?.errors?.['required']">
+                      Phone Number can't be empty
+                    </div>
+                    <div *ngIf="phone?.errors?.['pattern']">
+                      Phone Number should only have numbers
+                    </div>
+
+                    <div
+                      *ngIf="phone?.errors?.['minlength'] || phone?.errors?.['maxlength']"
+                    >
+                      Phone Number should be of 10 digits
+                    </div>
+                  </div>
+                </div>
+                <div class="btns-box">
+                  <div
+                    *ngIf="personalDetailsFormInvalid"
+                    class="error"
+                    style="
+                      color: red;
+                      font-size: 10px;
+                      position: absolute;
+                      bottom: 70px;
+                    "
+                  >
+                    Some field are empty or invalid, please fill data correctly
+                  </div>
+                  <a class="btn-navigate-form-step" step_number="2">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Next
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section id="step-2" class="form-step d-none">
+          <div class="form-box">
+            <div class="login-box">
+              <form formGroupName="universityDetailsForm">
+                <div class="user-box">
+                  <input
+                    type="text"
+                    name=""
+                    required=""
+                    formControlName="rollNo"
+                  />
+                  <label>Roll No.</label>
+                  <div
+                    *ngIf="
+                      rollNo?.invalid && (rollNo?.touched || rollNo?.dirty)
+                    "
+                    class="error"
+                    style="color: red; font-size: 10px"
+                  >
+                    <div *ngIf="rollNo?.errors?.['required']">
+                      RollNo Number can't be empty
+                    </div>
+                    <div *ngIf="rollNo?.errors?.['minlength']">
+                      RollNo Number should be more than 2 digits
+                    </div>
+                    <div *ngIf="rollNo?.errors?.['maxlength']">
+                      RollNo Number should be less than 9 digits
+                    </div>
+                  </div>
+                </div>
+                <div class="user-box">
+                  <input
+                    type="text"
+                    name=""
+                    required=""
+                    formControlName="branch"
+                  />
+                  <label>Branch</label>
+                  <div
+                    *ngIf="
+                      branch?.invalid && (branch?.touched || branch?.dirty)
+                    "
+                    class="error"
+                    style="color: red; font-size: 10px"
+                  >
+                    <div *ngIf="branch?.errors?.['required']">
+                      Branch can't be empty
+                    </div>
+                    <div *ngIf="branch?.errors?.['minlength']">
+                      Branch should be more than 1 characters
+                    </div>
+                  </div>
+                </div>
+                <div class="user-box">
+                  <input
+                    type="text"
+                    name=""
+                    required=""
+                    formControlName="year"
+                  />
+                  <label>Year</label>
+                  <div
+                    *ngIf="year?.invalid && (year?.touched || year?.dirty)"
+                    class="error"
+                    style="color: red; font-size: 10px"
+                  >
+                    <div *ngIf="year?.errors?.['required']">
+                      Year can't be empty
+                    </div>
+                  </div>
+                </div>
+                <div class="btns-box">
+                  <div
+                    *ngIf="universityDetailsFormInvalid"
+                    class="error"
+                    style="
+                      color: red;
+                      font-size: 10px;
+                      position: absolute;
+                      bottom: 70px;
+                    "
+                  >
+                    Some field are empty or invalid, please fill data correctly
+                  </div>
+                  <a class="btn-navigate-form-step" step_number="1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Back
+                  </a>
+                  <a class="btn-navigate-form-step" step_number="3">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Next
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section id="step-3" class="form-step d-none">
+          <div class="form-box">
+            <div class="login-box font-normal">
+              <h2 style="line-height: 1; margin-bottom: 10px">
+                Select Team
+                <span style="font-size: 13px">(one or more)</span>
+              </h2>
+              <form formGroupName="workDetailsForm">
+                <div class="user-box" style="margin-bottom: 10px">
+                  <mat-form-field style="margin-top: 10px" appearance="fill">
+                    <mat-label>Team</mat-label>
+                    <mat-select formControlName="team" required="" multiple>
+                      <mat-option
+                        *ngFor="let team of teamList"
+                        [value]="team"
+                        >{{ team }}</mat-option
+                      >
+                    </mat-select>
+                    <div
+                      *ngIf="teams?.invalid && (teams?.touched || teams?.dirty)"
+                      class="error"
+                      style="
+                        color: red;
+                        font-size: 10px;
+                        position: absolute;
+                        top: 30px;
+                      "
+                    >
+                      <div *ngIf="teams?.errors?.['required']">
+                        You should select atleast 1 team
+                      </div>
+                    </div>
+                  </mat-form-field>
+                </div>
+                <p
+                  style="
+                    font-size: 15px;
+                    line-height: 1.2;
+                    text-align: center;
+                    color: white;
+                    margin-bottom: 15px;
+                    margin-top: 10px;
+                  "
+                >
+                  Showcase your previous work <br /><span
+                    style="font-size: 13px"
+                    >(Only for Technical & Designing/Graphics Role)</span
+                  >
+                </p>
+                <div class="user-box">
+                  <input
+                    type="text"
+                    name=""
+                    required=""
+                    formControlName="workLink"
+                  />
+                  <label>Work Link</label>
+                </div>
+                <div class="btns-box">
+                  <div
+                    *ngIf="workDetailsFormInvalid"
+                    class="error"
+                    style="
+                      color: red;
+                      font-size: 10px;
+                      position: absolute;
+                      bottom: 70px;
+                    "
+                  >
+                    Some field are empty or invalid, please fill data correctly
+                  </div>
+                  <a class="btn-navigate-form-step" step_number="2">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Back
+                  </a>
+                  <a>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <button type="submit" (click)="onRegisterFormSubmit()">
+                      Submit
+                    </button>
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </form>
+    </div>
+  </div>
+</section>

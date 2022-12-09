@@ -183,8 +183,8 @@
   },
   {
     "eventTitle1": "Intra-College",
-    "eventTitle2": "Smart India",
-    "eventType": "Hackathon",
+    "eventTitle2": "Smart India Hackathon",
+    "eventType": "",
 
     "eventId": 5,
     "eventDate": "11 Mar, 2022 21:30:00",
@@ -198,7 +198,7 @@
       "assets/images/event-5.2.jpg",
       "assets/images/event-5.3.jpg",
       "assets/images/event-5.4.jpg",
-      "assets/images/event-5.7.jpeg",
+      "assets/images/event-5.5.jpg",
       "assets/images/event-5.6.jpg"
     ],
     "eventRegistrationLink": "https://registration.pythonanywhere.com/",

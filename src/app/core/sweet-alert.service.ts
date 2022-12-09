@@ -21,10 +21,26 @@ export class SweetAlertService {
   onErrorAlert(title: any, description: any, type: any) {
     swal.fire(title, description, type);
   }
-  onConfirmAlert() {}
+  onConfirmAlert() {
+    return swal.fire({
+      title: 'Are you sure?',
+      text: 'You are going to submit your application!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, submit it!',
+    });
+  }
 
   closeCurrentAlert() {
     swal.close();
+  }
+
+  onFormSubmission(title: any, description: any, type: any) {
+    swal.fire(title, description, type).then(() => {
+      this.router.navigate(['/']);
+    });
   }
 
   onPaymentSuccess(title: any, description: any, type: any) {

@@ -86,7 +86,8 @@ export class EventRegisterComponent implements OnInit {
     } else {
       if (!this.currEvent.isEventFree) {
         this.helperService.putUserData(this.eventRegistrationForm.value);
-        this.router.navigate(['/checkout', this.eventId]);
+        // this.router.navigate(['/checkout', this.eventId]);
+        console.log('Event is not free uncomment checkout page');
       } else {
         this.helperService.showLoader();
         this.httpApiService

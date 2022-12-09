@@ -38,6 +38,7 @@ export class ContactUsComponent implements OnInit {
   }
 
   onContactUs() {
+    console.log(this.contactUsForm.value);
     if (this.contactUsForm.valid) {
       this.helperService.showLoader();
       this.httpApiService.contactUs(this.contactUsForm.value).subscribe(

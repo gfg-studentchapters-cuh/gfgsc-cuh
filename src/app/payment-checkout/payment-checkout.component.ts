@@ -186,19 +186,6 @@ export class PaymentCheckoutComponent implements OnInit, AfterViewInit {
 
     rzp1.on('payment.failed', (response: any) => {
       console.log('Error in Payment!!!');
-      // this.sweetAlertService.onErrorAlert(
-      //   response.error.description,
-      //   'Note down order ID for future reference : ' +
-      //     response.error.metadata.order_id,
-      //   'error'
-      // );
-      // alert(response.error.code);
-      // alert(response.error.description);
-      // alert(response.error.source);
-      // alert(response.error.step);
-      // alert(response.error.reason);
-      // alert(response.error.metadata.order_id);
-      // alert(response.error.metadata.payment_id);
     });
 
     return rzp1;

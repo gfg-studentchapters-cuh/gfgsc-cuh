@@ -1,0 +1,73 @@
+.register-banner {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 600px;
+  left: 30%;
+  background: black;
+  padding: 10px 20px;
+  top: 77%;
+  border-radius: 10px;
+  color: white;
+  align-items: center;
+}
+
+.register-banner p {
+  display: flex;
+  gap: 20px;
+  color: white !important;
+  align-items: center;
+}
+.register-banner p a {
+  color: white;
+  font-size: 12px;
+  background-color: var(--main-color);
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.register-banner p a:hover {
+  background-color: white;
+  color: var(--main-color);
+  transition: all 1s;
+}
+
+.register-banner p i {
+  background-color: white;
+  color: var(--main-color);
+  padding: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.register-banner p i:hover {
+  background-color: var(--main-color);
+  color: white;
+  transition: all 1s;
+}
+@media (max-width: 500px) {
+  .register-banner {
+    width: 375px;
+    left: 2%;
+    padding: 5px 10px;
+    top: 100%;
+  }
+
+  .register-banner p {
+    gap: 10px;
+  }
+  .register-banner p i {
+    padding: 3px;
+  }
+  .register-banner p a {
+    font-size: 10px;
+    padding: 4px;
+  }
+  .register-banner h2 {
+    font-size: 12px;
+  }
+}
+
+#closeBanner {
+  background-color: transparent;
+}

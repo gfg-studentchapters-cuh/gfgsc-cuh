@@ -99,7 +99,7 @@ section.margT-4 {
 }
 
 .header {
-  background: var(--bg);
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -113,14 +113,21 @@ section.margT-4 {
 }
 
 .header .logo img {
-  height: 6rem;
+  height: 5.5rem;
 }
 
 .header .navbar a {
   margin: 0 1rem;
   font-size: 1.8rem;
-  color: #fff;
-  margin: 2rem;
+  color: var(--main-color);
+  margin: 3rem;
+  font-weight: 700;
+}
+
+.header .navbar a.active {
+  color: var(--main-color);
+  border-bottom: 0.1rem solid var(--main-color);
+  padding-bottom: 0.5rem;
 }
 
 .header .navbar a:hover {
@@ -137,7 +144,7 @@ section.margT-4 {
 }
 
 .header .icons div:hover {
-  color: #fff;
+  color: var(--bg);
 }
 
 #menu-btn {
@@ -309,7 +316,7 @@ section.margT-4 {
 
 .about .row .content p {
   font-size: 1.6rem;
-  color: #ccc;
+  color: #fff;
   padding: 1rem 0;
   line-height: 1.8;
 }
@@ -448,7 +455,7 @@ section.margT-4 {
 .review .box-container .box p {
   font-size: 1.5rem;
   line-height: 1.8;
-  color: #ccc;
+  color: #fff;
   padding: 2rem 0;
 }
 
@@ -575,7 +582,7 @@ section.margT-4 {
 .blogs .box-container .box .content p {
   font-size: 1.6rem;
   line-height: 1.8;
-  color: #ccc;
+  color: #fff;
   padding: 1rem 0;
 }
 
@@ -670,6 +677,7 @@ section.margT-4 {
 
   .header .navbar.active {
     right: 0;
+    z-index: 9;
   }
 
   .header .navbar a {
@@ -782,6 +790,11 @@ html::-webkit-scrollbar-thumb {
 
 body {
   background: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding-right: 0 !important;
 }
 
 section {

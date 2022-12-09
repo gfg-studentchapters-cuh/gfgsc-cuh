@@ -21,6 +21,7 @@ import {
   faCheck,
 } from '@fortawesome/free-solid-svg-icons';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatSelectModule } from '@angular/material/select';
 import {
   SocialLoginModule,
   SocialAuthServiceConfig,
@@ -53,6 +54,8 @@ import { TermConditionComponent } from './term-condition/term-condition.componen
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { EventRegisterComponent } from './event-register/event-register.component';
 import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
+import { RegisterComponent } from './register/register.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +79,8 @@ import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
     PrivacyPolicyComponent,
     EventRegisterComponent,
     RefundPolicyComponent,
+    RegisterComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,6 +96,7 @@ import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
     AppRoutingModule,
     SocialLoginModule,
     MatDialogModule,
+    MatSelectModule,
   ],
   providers: [
     {

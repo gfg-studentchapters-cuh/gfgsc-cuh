@@ -1,15 +1,16 @@
 <header class="header">
   <a routerLink="home" class="logo">
-    <img src="assets/images/gfg-logo.png" alt="" />
+    <img style="margin-right: 10px" src="assets/images/gfg-logo.png" alt="" />
+    <img src="assets/images/logo_cuh.png" alt="" />
   </a>
 
   <nav #navbar class="navbar">
-    <a routerLink="home">home</a>
-    <a routerLink="about-us">About Us</a>
-    <a routerLink="events">Events</a>
-    <a routerLink="our-team">Our Team</a>
+    <a routerLink="home" routerLinkActive="active">home</a>
+    <a routerLink="about-us" routerLinkActive="active">About Us</a>
+    <a routerLink="events" routerLinkActive="active">Events</a>
+    <a routerLink="our-team" routerLinkActive="active">Our Team</a>
     <!-- <a routerLink="faq">FAQs</a> -->
-    <a routerLink="contact-us">Contact Us</a>
+    <a routerLink="contact-us" routerLinkActive="active">Contact Us</a>
     <!-- <a href="#review">Review</a> -->
     <!-- <a routerLink="#contact">Contact</a> -->
     <!-- <a href="#blogs">Blogs</a> -->
@@ -24,4 +25,14 @@
     <input type="search" id="search-box" placeholder="search here..." />
     <label for="search-box" class="fas fa-search"></label>
   </div>
+  <!-- <ng-container *ngIf="currentPage != 'register'">
+    <div *ngIf="bannerVisibility" class="register-banner">
+      <h2>Want to join us? We are hiring</h2>
+      <p>
+        <a routerLink="about-us" fragment="registrationTerms">Read Terms</a
+        ><a routerLink="register">Register Now</a>
+        <button id="closeBanner" (click)="closeBanner()"><i  class="fa fa-close"></i></button>
+      </p>
+    </div>
+  </ng-container> -->
 </header>
